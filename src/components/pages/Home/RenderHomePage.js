@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
+import { SavingsGraph } from '../../graphs';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
@@ -12,6 +13,7 @@ function RenderHomePage(props) {
           This is an example of a common example of how we'd like for you to
           approach components.
         </p>
+        <SavingsGraph />
         <p>
           <Link to="/profile-list">Profiles Example</Link>
         </p>
