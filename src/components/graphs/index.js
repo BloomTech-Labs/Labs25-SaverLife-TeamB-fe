@@ -1,1 +1,1 @@
-export { default as SavingsGraph } from './SavingsGraph';
+export { default as SavingsGraph } from './SavingsGraph.js';
