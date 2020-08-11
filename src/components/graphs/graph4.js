@@ -7,10 +7,10 @@ function Graph4() {
       data={[
         {
           type: 'bar',
-          //   values: [55, 45],
           x: [1, 2],
           y: [2, 4],
           labels: ['Your Dollars Saved', 'Average Dollars Savings'],
+          marker: { color: ['hotpink', 'purple'] },
         },
       ]}
       layout={{ width: 420, height: 500, title: 'Compared Savings' }}
