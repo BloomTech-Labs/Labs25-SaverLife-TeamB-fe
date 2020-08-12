@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import { SavingsGraph, Budgets } from '../../graphs';
-import { ComparedSavings } from '../../graphs';
+import { SavingsGraph, Budgets, ComparedSavings } from '../../graphs';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
