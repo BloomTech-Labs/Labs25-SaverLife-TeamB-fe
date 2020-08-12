@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { SavingsGraph } from '../../graphs';
-import { Graph4 } from '../../graphs';
+import { ComparedSavings } from '../../graphs';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
@@ -15,7 +15,7 @@ function RenderHomePage(props) {
           approach components.
         </p>
         <SavingsGraph />
-        <Graph4 />
+        <ComparedSavings />
         <p>
           <Link to="/profile-list">Profiles Example</Link>
         </p>
