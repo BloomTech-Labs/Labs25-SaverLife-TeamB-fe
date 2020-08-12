@@ -9,7 +9,6 @@ function ComparedSavings() {
           type: 'bar',
           x: ['You', 'Other Users'],
           y: [2, 4],
-          //   labels: ['Your Dollars Saved', 'Average Dollars Savings'],
           marker: { color: ['hotpink', 'purple'] }, //each color is for new section of graph
         },
       ]}
