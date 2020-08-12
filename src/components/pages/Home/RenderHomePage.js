@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import { SavingsGraph } from '../../graphs';
-import { ComparedSavings } from '../../graphs';
+import { SavingsGraph, Budgets, ComparedSavings } from '../../graphs';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
@@ -15,6 +14,9 @@ function RenderHomePage(props) {
           approach components.
         </p>
         <SavingsGraph />
+
+        <Budgets />
+
         <ComparedSavings />
         <p>
           <Link to="/profile-list">Profiles Example</Link>
