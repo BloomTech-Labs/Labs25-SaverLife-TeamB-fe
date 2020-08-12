@@ -7,7 +7,7 @@ function ComparedSavings() {
       data={[
         {
           type: 'bar',
-          x: ['You', 'Other Users'], //how to add text to graph
+          x: ['You', 'Other Users'], //how to add text to graphs
           y: [2, 4],
           marker: { color: ['hotpink', 'purple'] }, //each color is for new section of graph
         },
