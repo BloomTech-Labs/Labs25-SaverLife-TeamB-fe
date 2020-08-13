@@ -30,9 +30,6 @@ function RenderHomePage(props) {
           <Link to="/profile-list">Profiles Example</Link>
         </p>
         <p>
-          <Link to="/example-list">Example List of Items</Link>
-        </p>
-        <p>
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
         <p>
