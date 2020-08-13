@@ -1,4 +1,6 @@
 /*eslint no-unused-vars: 0 */
+
+// will not be a necessary file at a later date
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import { getDSData } from '../../../api';
