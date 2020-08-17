@@ -6,8 +6,11 @@ const NotFoundPage = () => {
     <div>
       <h1>404 Page Not Found</h1>
       <Link to="/">
-        <button>Back To Home</button>
+        <button>Back To Account</button>
       </Link>
+      <a href="https://www.saverlife.org">
+        <button>Back To SaverLife Home</button>
+      </a>
     </div>
   );
 };
