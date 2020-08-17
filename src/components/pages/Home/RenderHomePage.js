@@ -12,12 +12,9 @@ function RenderHomePage(props) {
   const { userInfo, authService } = props;
   return (
     <div>
-      <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
+      <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
       <div>
-        <p>
-          This is an example of a common example of how we'd like for you to
-          approach components.
-        </p>
+        <p>Here is your spendings and savings history in graphs.</p>
         <SavingsGraph />
 
         <Budgets />
