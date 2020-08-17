@@ -9,7 +9,10 @@ const NotFoundPage = () => {
         <button>Back To Account</button>
       </Link>
       <a href="https://www.saverlife.org">
-        <button>Back To SaverLife Home</button>
+        <button>SaverLife Home</button>
+      </a>
+      <a href="https://help.saverlife.org/hc/en-us/">
+        <button>SaverLife Help</button>
       </a>
     </div>
   );
