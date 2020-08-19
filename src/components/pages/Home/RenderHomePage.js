@@ -15,14 +15,16 @@ function RenderHomePage(props) {
       <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
       <div>
         <p>Here is your spendings and savings history in graphs.</p>
-        <SavingsGraph />
 
-        <Budgets />
+        <div className="graphs-container">
+          <SavingsGraph />
 
-        <ComparedSavings />
+          <Budgets />
 
-        <ComparedSpendings />
+          <ComparedSavings />
 
+          <ComparedSpendings />
+        </div>
         <p>
           <Link to="/profile-list">Profiles Example</Link>
         </p>
