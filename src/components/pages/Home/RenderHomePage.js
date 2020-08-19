@@ -7,11 +7,13 @@ import {
   ComparedSavings,
   ComparedSpendings,
 } from '../../graphs';
+import Nav from '../Nav/Nav';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
   return (
     <div>
+      <Nav authService={authService} />
       <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
       <div>
         <p>Here is your spendings and savings history in graphs.</p>
@@ -30,11 +32,6 @@ function RenderHomePage(props) {
         </p>
         <p>
           <Link to="/datavis">Data Visualizations Example</Link>
-        </p>
-        <p>
-          <Button type="primary" onClick={() => authService.logout()}>
-            Logout
-          </Button>
         </p>
       </div>
     </div>
