@@ -18,6 +18,8 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 
+import './styles/app.css';
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
