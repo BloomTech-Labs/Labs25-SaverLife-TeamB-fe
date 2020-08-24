@@ -6,24 +6,39 @@ import {
   Budgets,
   ComparedSavings,
   ComparedSpendings,
+  GraphCarousel,
 } from '../../graphs';
 import Nav from '../Nav/Nav';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
+
+  // this function gets the width of the page, and renders either the graph carousel (mobile) or all of the graphs individually (desktop)
+  const renderGraphs = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 765) {
+      return (
+        <>
+          <SavingsGraph />
+
+          <Budgets />
+
+          <ComparedSavings />
+
+          <ComparedSpendings />
+        </>
+      );
+    } else {
+      return <GraphCarousel />;
+    }
+  };
   return (
     <div>
       <Nav authService={authService} />
       <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
       <div>
         <p>Here is your spendings and savings history in graphs.</p>
-        <SavingsGraph />
-
-        <Budgets />
-
-        <ComparedSavings />
-
-        <ComparedSpendings />
+        {renderGraphs()}
 
         <p>
           <Link to="/profile-list">Profiles Example</Link>
