@@ -1,60 +1,89 @@
-import React, { useState, useEffect } from 'react';
-import SavingsGraph from './SavingsGraph';
-import Budgets from './Budgets';
-import ComparedSavings from './ComparedSavings';
-import ComparedSpendings from './ComparedSpendings';
+import React from 'react';
+import { useSwipeable } from 'react-swipeable';
+import styled from 'styled-components';
 
-function GraphCarousel() {
-  // created an index to determine which graph to display, and set a default graph to state
-  const [index, setIndex] = useState(0);
-  const [graph, setGraph] = useState(<SavingsGraph />);
+const getOrder = ({ index, pos, numItems }) => {
+  return index - pos < 0 ? numItems - Math.abs(index - pos) : index - pos;
+};
+const initialState = { pos: 0, sliding: false, dir: 'RIGHT' };
 
-  // re-render the graph every time the index changes
-  useEffect(() => {
-    renderGraph();
-  }, [index]);
+const CarouselContainer = styled.div`
+  display: flex;
+  transition: ${props => (props.sliding ? 'none' : 'transform 1s ease')};
+  transform: ${props => {
+    if (!props.sliding) return 'translateX(calc(-100%))';
+    if (props.dir === 'LEFT') return 'translateX(calc(2 * (-100%)))';
+    return 'translateX(0%)';
+  }};
+`;
 
-  // modifies the graph state to be correlated to the current index
-  const renderGraph = () => {
-    if (index === 0) {
-      setGraph(<SavingsGraph />);
-    } else if (index === 1) {
-      setGraph(<Budgets />);
-    } else if (index === 2) {
-      setGraph(<ComparedSavings />);
-    } else if (index === 3) {
-      setGraph(<ComparedSpendings />);
-    }
+const Wrapper = styled.div`
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px 7px rgba(168, 168, 168, 1);
+`;
+
+const CarouselSlot = styled.div`
+  flex: 1 0 100%;
+  flex-basis: 100%;
+  margin-right: 0px;
+  order: ${props => props.order};
+`;
+
+function reducer(state, { type, numItems }) {
+  switch (type) {
+    case 'LEFT':
+      return {
+        ...state,
+        dir: 'LEFT',
+        sliding: true,
+        pos: state.pos === 0 ? numItems - 1 : state.pos - 1,
+      };
+    case 'RIGHT':
+      return {
+        ...state,
+        dir: 'RIGHT',
+        sliding: true,
+        pos: state.pos === numItems - 1 ? 0 : state.pos + 1,
+      };
+    case 'STOP':
+      return { ...state, sliding: false };
+    default:
+      return state;
+  }
+}
+
+const GraphCarousel = props => {
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const numItems = React.Children.count(props.children);
+  const slide = dir => {
+    dispatch({ type: dir, numItems });
+    setTimeout(() => {
+      dispatch({ type: 'STOP' });
+    }, 50);
   };
-
-  // left and right functions serve to increase or decrease the index, and handle the index from going out of range
-  const indexLeft = () => {
-    index - 1 < 0 ? setIndex(3) : setIndex(index - 1);
-  };
-  const indexRight = () => {
-    index + 1 > 3 ? setIndex(0) : setIndex(index + 1);
-  };
-
+  const handlers = useSwipeable({
+    onSwipedLeft: () => slide('RIGHT'),
+    onSwipedRight: () => slide('LEFT'),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
   return (
-    <div>
-      <button
-        onClick={() => {
-          indexLeft();
-        }}
-      >
-        {' '}
-        &#60;{' '}
-      </button>
-      {graph}
-      <button
-        onClick={() => {
-          indexRight();
-        }}
-      >
-        &#62;
-      </button>
+    <div {...handlers}>
+      <Wrapper>
+        <CarouselContainer dir={state.dir} sliding={state.sliding}>
+          {React.Children.map(props.children, (child, index) => (
+            <CarouselSlot
+              key={index}
+              order={getOrder({ index: index, pos: state.pos, numItems })}
+            >
+              {child}
+            </CarouselSlot>
+          ))}
+        </CarouselContainer>
+      </Wrapper>
     </div>
   );
-}
+};
 
 export default GraphCarousel;

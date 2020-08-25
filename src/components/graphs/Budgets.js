@@ -39,16 +39,15 @@ function Budgets() {
                 size: [40, 60, 80, 100],
               },
             },
-          ]}
-          layout={{
-            title: 'Bubble Chart Hover Text',
-            showlegend: false,
-            height: 600,
-            width: 600,
-          }}
-        />
-      </BudgetsInfo>
 
+          },
+        ]}
+        useResizeHandler
+        style={{ width: '100%', height: 400 }}
+        layout={{ autosize: true, title: 'Bubble Chart Hover Text' }}
+      />
+    
+      </BudgetsInfo>
       <BudgetsInfo>
         <h1>Your Savings this Month</h1>
         <p>You saved this much in this category this month.</p>

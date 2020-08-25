@@ -30,7 +30,12 @@ function ComparedSpendings() {
   return (
     <SavingsGraphContainer>
       <SavingsGraphInfo>
-        <Plot data={data} />
+        <Plot 
+          data={data}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
+          layout={{ autosize: true, title: 'Your Spendings' }}
+         />
       </SavingsGraphInfo>
 
       <SavingsGraphInfo>
