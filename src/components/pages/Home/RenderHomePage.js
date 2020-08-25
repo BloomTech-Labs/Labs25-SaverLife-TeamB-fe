@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import {
   SavingsGraph,
-  Budgets,
+  SpendingPost,
   ComparedSavings,
   ComparedSpendings,
   GraphCarousel,
 } from '../../graphs';
 import Nav from '../Nav/Nav';
 
+import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
+
+  const { authState } = useOktaAuth();
 
   // this function gets the width of the page, and renders either the graph carousel (mobile) or all of the graphs individually (desktop)
   const renderGraphs = () => {
@@ -21,7 +25,10 @@ function RenderHomePage(props) {
         <>
           <SavingsGraph />
 
-          <Budgets />
+          <SpendingPost
+            authState={authState}
+            url={process.env.REACT_APP_API_URI + '/data/spending'}
+          />
 
           <ComparedSavings />
 
@@ -33,7 +40,7 @@ function RenderHomePage(props) {
         <GraphCarousel title="Graphs">
           <SavingsGraph />
 
-          <Budgets />
+          <SpendingPost />
 
           <ComparedSavings />
 

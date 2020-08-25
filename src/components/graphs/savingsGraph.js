@@ -30,9 +30,9 @@ function SavingsGraph() {
               labels: ['Food', 'Rent', 'Utility'],
             },
           ]}
-           useResizeHandler
-        style={{ width: '100%', height: 400 }}
-        layout={{ autosize: true, title: 'Your Spendings' }}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
+          layout={{ autosize: true, title: 'Your Spendings' }}
         />
       </SavingsGraphInfo>
     </SavingsGraphContainer>

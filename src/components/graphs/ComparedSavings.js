@@ -30,9 +30,9 @@ function ComparedSavings() {
               marker: { color: ['hotpink', 'purple'] }, //each color is for new section of graph
             },
           ]}
-            useResizeHandler
-        style={{ width: '100%', height: 400 }}
-        layout={{ autosize: true, title: 'Compared Savings' }}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
+          layout={{ autosize: true, title: 'Compared Savings' }}
         />
       </ComparedSavingsInfo>
     </ComparedSavingsContainer>
