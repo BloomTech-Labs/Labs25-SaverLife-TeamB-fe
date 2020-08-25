@@ -29,7 +29,15 @@ const getDSData = (url, authState) => {
     throw new Error('No URL provided');
   }
   return axios
-    .get(url, { headers })
+    .post(
+      url,
+      {
+        user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+        time_period: 'week',
+        graph_type: 'pie',
+      },
+      { headers }
+    )
     .then(res => JSON.parse(res.data))
     .catch(err => err);
 };
