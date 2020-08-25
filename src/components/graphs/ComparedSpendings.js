@@ -1,5 +1,16 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import styled from 'styled-components';
+
+const SavingsGraphContainer = styled.div`
+  display: flex;
+  margin: 0 auto;
+  padding: 5%;
+  width: 80%;
+`;
+const SavingsGraphInfo = styled.div`
+  margin: 0 auto;
+`;
 
 function ComparedSpendings() {
   var trace1 = {
@@ -17,18 +28,21 @@ function ComparedSpendings() {
   var data = [trace1, trace2];
 
   return (
-    <div className="CompSpendingsContainer">
-      <Plot
-        data={data}
-        useResizeHandler
-        style={{ width: '100%', height: 400 }}
-        layout={{ autosize: true, title: 'Your Spendings' }}
-      />
-      <div className="CompSpendings-info">
-        <h1>Your Compared Spendings this Month</h1>
-        <p>You comparatively spent this much in this category this month.</p>
-      </div>
-    </div>
+    <SavingsGraphContainer>
+      <SavingsGraphInfo>
+        <Plot 
+          data={data}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
+          layout={{ autosize: true, title: 'Your Spendings' }}
+         />
+      </SavingsGraphInfo>
+
+      <SavingsGraphInfo>
+        <h1>Your Spendings this Month</h1>
+        <p>You spent this much in this category this month compared to last.</p>
+      </SavingsGraphInfo>
+    </SavingsGraphContainer>
   );
 }
 
