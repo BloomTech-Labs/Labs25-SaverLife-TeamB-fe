@@ -16,7 +16,20 @@ function ComparedSpendings() {
 
   var data = [trace1, trace2];
 
-  return <Plot data={data} />;
+  return (
+    <div className="CompSpendingsContainer">
+      <Plot
+        data={data}
+        useResizeHandler
+        style={{ width: '100%', height: 400 }}
+        layout={{ autosize: true, title: 'Your Spendings' }}
+      />
+      <div className="CompSpendings-info">
+        <h1>Your Compared Spendings this Month</h1>
+        <p>You comparatively spent this much in this category this month.</p>
+      </div>
+    </div>
+  );
 }
 
 export default ComparedSpendings;
