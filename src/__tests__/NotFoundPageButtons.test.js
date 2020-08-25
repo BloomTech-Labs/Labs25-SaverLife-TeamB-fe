@@ -22,4 +22,13 @@ describe('Loading Common Component', () => {
     const href = getByText(/SaverLife Home/i);
     expect(href.textContent).toBe('SaverLife Home');
   });
+  test('it should mount a button based on an a href', () => {
+    const { getByText } = render(
+      <Router>
+        <NotFoundPage />
+      </Router>
+    );
+    const href2 = getByText(/SaverLife Help/i);
+    expect(href2.textContent).toBe('SaverLife Help');
+  });
 });
