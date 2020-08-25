@@ -29,7 +29,17 @@ function RenderHomePage(props) {
         </>
       );
     } else {
-      return <GraphCarousel />;
+      return (
+        <GraphCarousel title="Graphs">
+          <SavingsGraph />
+
+          <Budgets />
+
+          <ComparedSavings />
+
+          <ComparedSpendings />
+        </GraphCarousel>
+      );
     }
   };
   return (
