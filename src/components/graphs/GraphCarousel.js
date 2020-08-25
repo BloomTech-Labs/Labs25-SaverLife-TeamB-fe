@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SavingsGraph from './SavingsGraph';
-import Budgets from './Budgets';
+import SpendingPost from './SpendingPost';
 import ComparedSavings from './ComparedSavings';
 import ComparedSpendings from './ComparedSpendings';
 
@@ -19,7 +19,7 @@ function GraphCarousel() {
     if (index === 0) {
       setGraph(<SavingsGraph />);
     } else if (index === 1) {
-      setGraph(<Budgets />);
+      setGraph(<SpendingPost />);
     } else if (index === 2) {
       setGraph(<ComparedSavings />);
     } else if (index === 3) {
