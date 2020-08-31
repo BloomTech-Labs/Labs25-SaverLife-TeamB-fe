@@ -1,4 +1,4 @@
-export { default as SavingsGraph } from './SavingsGraph';
+export { default as MoneyFlow } from './MoneyFlow';
 
 export { default as SpendingPost } from './SpendingPost';
 export { default as ComparedSavings } from './ComparedSavings';
