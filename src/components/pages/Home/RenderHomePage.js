@@ -9,8 +9,15 @@ import {
   GraphCarousel,
 } from '../../graphs';
 import Nav from '../Nav/Nav';
+import styled from 'styled-components';
 
 import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+
+const HomeWrapper = styled.div`
+  @media (max-width: 765px) {
+    text-align: center;
+  }
+`;
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
@@ -59,7 +66,7 @@ function RenderHomePage(props) {
     }
   };
   return (
-    <div>
+    <HomeWrapper>
       <Nav authService={authService} />
       <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
       <div>
@@ -73,7 +80,7 @@ function RenderHomePage(props) {
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
       </div>
-    </div>
+    </HomeWrapper>
   );
 }
 export default RenderHomePage;

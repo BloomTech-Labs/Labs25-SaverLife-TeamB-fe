@@ -9,9 +9,19 @@ const SpendingContainer = styled.div`
   padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  @media (max-width: 765px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
 `;
 const SpendingInfo = styled.div`
   margin: 0 auto;
+  @media (max-width: 765px) {
+    text-align: center;
+    margin: 0;
+  }
 `;
 
 const initialState = {
@@ -40,7 +50,13 @@ function SpendingPost(props) {
   return (
     <SpendingContainer>
       <SpendingInfo>
-        <Plot data={data.data} layout={data.layout} />
+        <Plot
+          data={data.data}
+          layout={
+            (data.layout,
+            { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
+          }
+        />
       </SpendingInfo>
 
       <SpendingInfo>

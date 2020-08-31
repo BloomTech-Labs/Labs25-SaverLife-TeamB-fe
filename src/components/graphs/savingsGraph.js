@@ -1,56 +1,56 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 import styled from 'styled-components';
+import Button from '../common/Button';
 
-const ComparedSavingsContainer = styled.div`
+const SavingsGraphContainer = styled.div`
   display: flex;
   margin: 0 auto;
   padding: 5%;
   width: 80%;
-  border-bottom: 1px solid #e266b5;
+  border-bottom: 5px solid #e266b5;
   @media (max-width: 765px) {
     width: 100%;
-    padding: 0;
     margin: 0;
+    padding: 0;
     flex-direction: column-reverse;
   }
 `;
-const ComparedSavingsInfo = styled.div`
+const SavingsGraphInfo = styled.div`
   margin: 0 auto;
   @media (max-width: 765px) {
-    text-align: center;
     margin: 0;
+    text-align: center;
   }
 `;
 
-function ComparedSavings() {
+function SavingsGraph() {
   return (
-    <ComparedSavingsContainer>
-      <ComparedSavingsInfo>
-        <h1>Your Savings this month compared to last</h1>
+    <SavingsGraphContainer>
+      <SavingsGraphInfo>
+        <h1>Your Savings this Month</h1>
         <p>You saved this much in this category this month.</p>
-      </ComparedSavingsInfo>
-      <ComparedSavingsInfo>
+      </SavingsGraphInfo>
+      <SavingsGraphInfo>
         <Plot
           data={[
             {
-              type: 'bar',
-              x: ['You', 'Other Users'], //how to add text to graphs
-              y: [2, 4],
-              marker: { color: ['hotpink', 'purple'] }, //each color is for new section of graph
+              type: 'pie',
+              values: [19, 26, 55],
+              labels: ['Food', 'Rent', 'Utility'],
             },
           ]}
           useResizeHandler
           style={{ width: '100%', height: 400 }}
           layout={{
             autosize: true,
-            title: 'Compared Savings',
+            title: 'Your Spendings',
             yaxis: { fixedrange: true },
             xaxis: { fixedrange: true },
           }}
         />
-      </ComparedSavingsInfo>
-    </ComparedSavingsContainer>
+      </SavingsGraphInfo>
+    </SavingsGraphContainer>
   );
 }
-export default ComparedSavings;
+export default SavingsGraph;

@@ -7,9 +7,19 @@ const SavingsGraphContainer = styled.div`
   margin: 0 auto;
   padding: 5%;
   width: 80%;
+  @media (max-width: 765px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
 `;
 const SavingsGraphInfo = styled.div`
   margin: 0 auto;
+  @media (max-width: 765px) {
+    text-align: center;
+    margin: 0;
+  }
 `;
 
 function ComparedSpendings() {
@@ -34,7 +44,12 @@ function ComparedSpendings() {
           data={data}
           useResizeHandler
           style={{ width: '100%', height: 400 }}
-          layout={{ autosize: true, title: 'Your Spendings' }}
+          layout={{
+            autosize: true,
+            title: 'Your Spendings',
+            yaxis: { fixedrange: true },
+            xaxis: { fixedrange: true },
+          }}
         />
       </SavingsGraphInfo>
 
