@@ -8,9 +8,19 @@ const ComparedSavingsContainer = styled.div`
   padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  @media (max-width: 765px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column-reverse;
+  }
 `;
 const ComparedSavingsInfo = styled.div`
   margin: 0 auto;
+  @media (max-width: 765px) {
+    text-align: center;
+    margin: 0;
+  }
 `;
 
 function ComparedSavings() {
@@ -32,7 +42,12 @@ function ComparedSavings() {
           ]}
           useResizeHandler
           style={{ width: '100%', height: 400 }}
-          layout={{ autosize: true, title: 'Compared Savings' }}
+          layout={{
+            autosize: true,
+            title: 'Compared Savings',
+            yaxis: { fixedrange: true },
+            xaxis: { fixedrange: true },
+          }}
         />
       </ComparedSavingsInfo>
     </ComparedSavingsContainer>
