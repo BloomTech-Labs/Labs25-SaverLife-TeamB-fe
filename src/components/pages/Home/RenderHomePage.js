@@ -47,7 +47,10 @@ function RenderHomePage(props) {
         <GraphCarousel title="Graphs">
           <SavingsGraph />
 
-          <SpendingPost />
+          <SpendingPost
+            authState={authState}
+            url={process.env.REACT_APP_API_URI + '/data/spending'}
+          />
 
           <ComparedSavings />
 
