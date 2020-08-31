@@ -32,9 +32,27 @@ const getDSData = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+        user_ID: '00ulthapbErVUwVJy4x6',
         time_period: 'week',
         graph_type: 'pie',
+      },
+      { headers }
+    )
+    .then(res => JSON.parse(res.data))
+    .catch(err => err);
+};
+
+const getMoneyFlow = (url, authState) => {
+  const headers = getAuthHeader(authState);
+  if (!url) {
+    throw new Error('No URL provided');
+  }
+  return axios
+    .post(
+      url,
+      {
+        user_ID: '00ulthapbErVUwVJy4x6',
+        time_period: 'week',
       },
       { headers }
     )
@@ -57,4 +75,4 @@ const getProfileData = authState => {
   }
 };
 
-export { sleep, getExampleData, getProfileData, getDSData };
+export { sleep, getExampleData, getProfileData, getDSData, getMoneyFlow };

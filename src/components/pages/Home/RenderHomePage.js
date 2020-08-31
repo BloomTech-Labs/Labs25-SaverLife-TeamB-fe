@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import {
-  SavingsGraph,
+  MoneyFlow,
   SpendingPost,
   ComparedSavings,
   ComparedSpendings,
@@ -30,11 +30,14 @@ function RenderHomePage(props) {
     if (screenWidth > 765) {
       return (
         <>
-          <SavingsGraph />
+          <MoneyFlow
+            authState={authState}
+            url={process.env.REACT_APP_API_URI + 'data/moneyflow'}
+          />
 
           <SpendingPost
             authState={authState}
-            url={process.env.REACT_APP_API_URI + '/data/spending'}
+            url={process.env.REACT_APP_API_URI + 'data/spending'}
           />
 
           <ComparedSavings />
@@ -45,11 +48,14 @@ function RenderHomePage(props) {
     } else {
       return (
         <GraphCarousel title="Graphs">
-          <SavingsGraph />
+          <MoneyFlow
+            authState={authState}
+            url={process.env.REACT_APP_API_URI + 'data/moneyflow'}
+          />
 
           <SpendingPost
             authState={authState}
-            url={process.env.REACT_APP_API_URI + '/data/spending'}
+            url={process.env.REACT_APP_API_URI + 'data/spending'}
           />
 
           <ComparedSavings />
