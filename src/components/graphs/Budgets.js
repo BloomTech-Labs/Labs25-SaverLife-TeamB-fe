@@ -8,9 +8,19 @@ const BudgetsContainer = styled.div`
   padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  @media (max-width: 765px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
 `;
 const BudgetsInfo = styled.div`
   margin: 0 auto;
+  @media (max-width: 765px) {
+    margin: 0;
+    text-align: center;
+  }
 `;
 
 function Budgets() {
@@ -39,14 +49,16 @@ function Budgets() {
                 size: [40, 60, 80, 100],
               },
             },
-
-          },
-        ]}
-        useResizeHandler
-        style={{ width: '100%', height: 400 }}
-        layout={{ autosize: true, title: 'Bubble Chart Hover Text' }}
-      />
-    
+          ]}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
+          layout={{
+            autosize: true,
+            title: 'Bubble Chart Hover Text',
+            yaxis: { fixedrange: true },
+            xaxis: { fixedrange: true },
+          }}
+        />
       </BudgetsInfo>
       <BudgetsInfo>
         <h1>Your Savings this Month</h1>
