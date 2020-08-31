@@ -7,16 +7,6 @@ const getOrder = ({ index, pos, numItems }) => {
 };
 const initialState = { pos: 0, sliding: false, dir: 'RIGHT' };
 
-const CarouselContainer = styled.div`
-  display: flex;
-  transition: ${props => (props.sliding ? 'none' : 'transform 1s ease')};
-  transform: ${props => {
-    if (!props.sliding) return 'translateX(calc(-100%))';
-    if (props.dir === 'LEFT') return 'translateX(calc(2 * (-100%)))';
-    return 'translateX(0%)';
-  }};
-`;
-
 const Wrapper = styled.div`
   width: 100%;
   overflow: hidden;
@@ -28,6 +18,16 @@ const CarouselSlot = styled.div`
   flex-basis: 100%;
   margin-right: 0px;
   order: ${props => props.order};
+`;
+
+const CarouselContainer = styled.div`
+  display: flex;
+  transition: ${props => (props.sliding ? 'none' : 'transform 1s ease')};
+  transform: ${props => {
+    if (!props.sliding) return 'translateX(calc(-100%))';
+    if (props.dir === 'LEFT') return 'translateX(calc(2 * (-100%)))';
+    return 'translateX(0%)';
+  }};
 `;
 
 function reducer(state, { type, numItems }) {
