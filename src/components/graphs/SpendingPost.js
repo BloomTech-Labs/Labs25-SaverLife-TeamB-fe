@@ -52,6 +52,8 @@ function SpendingPost(props) {
       <SpendingInfo>
         <Plot
           data={data.data}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
           layout={
             (data.layout,
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
