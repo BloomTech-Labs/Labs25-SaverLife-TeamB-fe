@@ -13,6 +13,11 @@ import styled from 'styled-components';
 
 import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
 
+const HeaderContainer = styled.div`
+  align-content: center;
+  margin: 0 auto;
+  width: 80%;
+`;
 const HomeWrapper = styled.div`
   @media (max-width: 765px) {
     text-align: center;
@@ -68,18 +73,14 @@ function RenderHomePage(props) {
   return (
     <HomeWrapper>
       <Nav authService={authService} />
-      <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
-      <div>
-        <p>Here is your spendings and savings history in graphs.</p>
-        {renderGraphs()}
+      <HeaderContainer>
+        <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
+        <div>
+          <p>Here is your spendings and savings history in graphs.</p>
+        </div>
+      </HeaderContainer>
 
-        <p>
-          <Link to="/profile-list">Profiles Example</Link>
-        </p>
-        <p>
-          <Link to="/datavis">Data Visualizations Example</Link>
-        </p>
-      </div>
+      {renderGraphs()}
     </HomeWrapper>
   );
 }
