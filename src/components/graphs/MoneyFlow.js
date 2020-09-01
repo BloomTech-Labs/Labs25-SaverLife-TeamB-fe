@@ -52,6 +52,9 @@ function MoneyFlow(props) {
     <MoneyFlowContainer>
       <MoneyFlowInfo>
         <h1>Your Money Flow this Past Month</h1>
+      </MoneyFlowInfo>
+
+      <MoneyFlowInfo>
         <Plot
           data={data.data}
           useResizeHandler
