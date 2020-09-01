@@ -10,9 +10,18 @@ const MoneyFlowContainer = styled.div`
   padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  @media (max-width: 765px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
 `;
 const MoneyFlowInfo = styled.div`
   margin: 0 auto;
+  @media (max-width: 765px) {
+    text-align: center;
+    margin: 0;
 `;
 
 const initialState = {
@@ -42,7 +51,15 @@ function MoneyFlow(props) {
   return (
     <MoneyFlowContainer>
       <MoneyFlowInfo>
-        <Plot data={data.data} layout={data.layout} />
+        <Plot
+          data={data.data}
+          useResizeHandler
+          style={{ width: '100%', height: 400 }}
+          layout={
+            (data.layout,
+            { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
+          }
+        />
       </MoneyFlowInfo>
     </MoneyFlowContainer>
   );
