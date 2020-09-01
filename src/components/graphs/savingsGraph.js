@@ -8,7 +8,7 @@ const SavingsGraphContainer = styled.div`
   margin: 0 auto;
   padding: 5%;
   width: 80%;
-  border-bottom: 5px solid #e266b5;
+  border-bottom: 1px solid #e266b5;
   @media (max-width: 765px) {
     width: 100%;
     margin: 0;
