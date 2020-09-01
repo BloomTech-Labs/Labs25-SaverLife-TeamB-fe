@@ -9,7 +9,7 @@ const MoneyFlowContainer = styled.div`
   margin: 0 auto;
   padding: 5%;
   width: 80%;
-  border-bottom: 5px solid #e266b5;
+  border-bottom: 1px solid #e266b5;
 `;
 const MoneyFlowInfo = styled.div`
   margin: 0 auto;
@@ -41,10 +41,6 @@ function MoneyFlow(props) {
 
   return (
     <MoneyFlowContainer>
-      <MoneyFlowInfo>
-        <h1>Your daily net income for this month.</h1>
-        <p>Here are your transactions and net income for this month.</p>
-      </MoneyFlowInfo>
       <MoneyFlowInfo>
         <Plot data={data.data} layout={data.layout} />
       </MoneyFlowInfo>
