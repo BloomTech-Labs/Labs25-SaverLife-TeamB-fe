@@ -33,7 +33,7 @@ describe('Loading Common Component', () => {
   });
 });
 
-describe('click button', () => {
+describe('click buttons', () => {
   test('click home button', () => {
     const { getByText } = render(
       <Router>
@@ -53,5 +53,15 @@ describe('click button', () => {
     const clickButton = getByText(/SaverLife Help/i);
     fireEvent.click(clickButton);
     expect(clickButton.innerHTML).toBe('SaverLife Help');
+  });
+  test('click account button', () => {
+    const { getByText } = render(
+      <Router>
+        <NotFoundPage />
+      </Router>
+    );
+    const clickButton = getByText(/Back To Account/i);
+    fireEvent.click(clickButton);
+    expect(clickButton.innerHTML).toBe('Back To Account');
   });
 });
