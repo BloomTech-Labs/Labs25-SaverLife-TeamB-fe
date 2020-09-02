@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import styled from 'styled-components';
-// import { ProgressBar, Button } from 'react-bootstrap';
+import { ProgressBar, Button } from 'react-bootstrap';
 
 const BudgetsContainer = styled.div`
-  display: flex;
   margin: 0 auto;
   padding: 5%;
   width: 80%;
@@ -18,11 +17,18 @@ const BudgetsContainer = styled.div`
 `;
 const BudgetsInfo = styled.div`
   margin: 0 auto;
+  width: 50%;
   @media (max-width: 765px) {
     text-align: center;
     margin: 0;
   }
 `;
+
+// const initialState ={
+
+// };
+
+const progress = 65;
 
 function Budgets() {
   return (
@@ -33,24 +39,35 @@ function Budgets() {
           You saved this much in this category from your budgeting this month.
         </p>
       </BudgetsInfo>
+
       <BudgetsInfo>
-        <Plot
-          data={[
-            {
-              type: 'bar',
-              x: ['You', 'Other Users'], //how to add text to graphs
-              y: [2, 4],
-              marker: { color: ['hotpink', 'purple'] }, //each color is for new section of graph
-            },
-          ]}
-          useResizeHandler
-          style={{ width: '100%', height: 400 }}
-          layout={{
-            autosize: true,
-            title: 'Compared Savings',
-            yaxis: { fixedrange: true },
-            xaxis: { fixedrange: true },
-          }}
+        <ProgressBar
+          now={progress}
+          animated
+          striped
+          variant="success"
+          label={`${progress}% Success`}
+        />
+        <ProgressBar
+          now={progress}
+          animated
+          striped
+          variant="info"
+          label={`${progress}% Information`}
+        />
+        <ProgressBar
+          now={progress}
+          animated
+          striped
+          variant="warning"
+          label={`${progress}% Warning`}
+        />
+        <ProgressBar
+          now={progress}
+          animated
+          striped
+          variant="danger"
+          label={`${progress}% Danger`}
         />
       </BudgetsInfo>
     </BudgetsContainer>
