@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import {
   MoneyFlow,
   SpendingPost,
-  ComparedSavings,
+  Budgets,
   ComparedSpendings,
   GraphCarousel,
 } from '../../graphs';
@@ -45,7 +45,7 @@ function RenderHomePage(props) {
             url={process.env.REACT_APP_API_URI + 'data/spending'}
           />
 
-          <ComparedSavings />
+          <Budgets />
 
           <ComparedSpendings />
         </>
@@ -63,7 +63,7 @@ function RenderHomePage(props) {
             url={process.env.REACT_APP_API_URI + 'data/spending'}
           />
 
-          <ComparedSavings />
+          <Budgets />
 
           <ComparedSpendings />
         </GraphCarousel>
