@@ -28,9 +28,33 @@ const BudgetsInfo = styled.div`
 
 // };
 
-const progress = 65;
+const category1 = 'Food';
+const currentSpending1 = 562;
+const maxSpending1 = 1000;
+
+const category2 = 'Entertainment';
+const currentSpending2 = 270;
+const maxSpending2 = 788;
+
+const category3 = 'Utilities';
+const currentSpending3 = 455;
+const maxSpending3 = 566;
+
+const category4 = 'Medical';
+const currentSpending4 = 100;
+const maxSpending4 = 420;
 
 function Budgets() {
+  const checkProgressColor = percentage => {
+    if (percentage < 50) {
+      return 'success';
+    } else if (percentage > 80) {
+      return 'danger';
+    } else {
+      return 'warning';
+    }
+  };
+
   return (
     <BudgetsContainer>
       <BudgetsInfo>
@@ -41,34 +65,45 @@ function Budgets() {
       </BudgetsInfo>
 
       <BudgetsInfo>
+        <h6>{category1}</h6>
         <ProgressBar
-          now={progress}
+          now={(currentSpending1 / maxSpending1) * 100}
           animated
           striped
-          variant="success"
-          label={`${progress}% Success`}
+          variant={checkProgressColor((currentSpending1 / maxSpending1) * 100)}
+          label={`$${currentSpending1}`}
         />
+        <p>${maxSpending1}</p>
+
+        <h6>{category2}</h6>
         <ProgressBar
-          now={progress}
+          now={(currentSpending2 / maxSpending2) * 100}
           animated
           striped
-          variant="info"
-          label={`${progress}% Information`}
+          variant={checkProgressColor((currentSpending2 / maxSpending2) * 100)}
+          label={`$${currentSpending2}`}
         />
+        <p>${maxSpending2}</p>
+
+        <h6>{category3}</h6>
         <ProgressBar
-          now={progress}
+          now={(currentSpending3 / maxSpending3) * 100}
           animated
           striped
-          variant="warning"
-          label={`${progress}% Warning`}
+          variant={checkProgressColor((currentSpending3 / maxSpending3) * 100)}
+          label={`$${currentSpending3}`}
         />
+        <p>${maxSpending3}</p>
+
+        <h6>{category4}</h6>
         <ProgressBar
-          now={progress}
+          now={(currentSpending4 / maxSpending4) * 100}
           animated
           striped
-          variant="danger"
-          label={`${progress}% Danger`}
+          variant={checkProgressColor((currentSpending4 / maxSpending4) * 100)}
+          label={`$${currentSpending4}`}
         />
+        <p>${maxSpending4}</p>
       </BudgetsInfo>
     </BudgetsContainer>
   );
