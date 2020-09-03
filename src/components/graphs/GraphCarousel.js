@@ -135,7 +135,7 @@ const GraphCarousel = props => {
       slide('LEFT');
     },
     preventDefaultTouchmoveEvent: true,
-    trackMouse: false,
+    trackMouse: true,
   });
   return (
     <div {...handlers}>
