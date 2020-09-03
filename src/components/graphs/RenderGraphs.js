@@ -2,7 +2,7 @@ import React from 'react';
 import {
   MoneyFlow,
   SpendingPost,
-  ComparedSavings,
+  Budgets,
   ComparedSpendings,
   GraphCarousel,
 } from '../graphs';
@@ -48,7 +48,7 @@ const RenderGraphs = () => {
               url={process.env.REACT_APP_API_URI + 'data/spending'}
             />
 
-            <ComparedSavings />
+            <Budgets />
 
             <ComparedSpendings />
           </>
@@ -71,7 +71,7 @@ const RenderGraphs = () => {
               />
             </GraphWrapper>
             <GraphWrapper>
-              <ComparedSavings />
+              <Budgets />
             </GraphWrapper>
             <GraphWrapper>
               <ComparedSpendings />
