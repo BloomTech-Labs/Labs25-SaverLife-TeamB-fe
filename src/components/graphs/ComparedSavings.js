@@ -13,6 +13,7 @@ const ComparedSavingsContainer = styled.div`
     padding: 0;
     margin: 0;
     flex-direction: column-reverse;
+    border-bottom: 0;
   }
 `;
 const ComparedSavingsInfo = styled.div`
