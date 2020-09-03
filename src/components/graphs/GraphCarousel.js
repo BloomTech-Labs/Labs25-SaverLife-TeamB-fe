@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
+import { Select } from 'antd';
 
 const getOrder = ({ index, pos, numItems }) => {
   return index - pos < 0 ? numItems - Math.abs(index - pos) : index - pos;
 };
-const initialState = { pos: 0, sliding: false, dir: 'RIGHT' };
+const initialState = { pos: 0, sliding: false, dir: 'RIGHT', dotIndex: 1 };
 
 const Wrapper = styled.div`
   width: 100%;
   overflow: hidden;
-  box-shadow: 5px 5px 20px 7px rgba(168, 168, 168, 1);
 `;
 
 const CarouselSlot = styled.div`
@@ -30,6 +30,16 @@ const CarouselContainer = styled.div`
   }};
 `;
 
+const CarouselDots = styled.p`
+  font-size: 2.5rem;
+  letter-spacing: 0.8rem;
+`;
+
+const SelectedDot = styled.span`
+  font-size: 3.5rem;
+  color: rgb(189, 35, 125);
+`;
+
 function reducer(state, { type, numItems }) {
   switch (type) {
     case 'LEFT':
@@ -38,6 +48,7 @@ function reducer(state, { type, numItems }) {
         dir: 'LEFT',
         sliding: true,
         pos: state.pos === 0 ? numItems - 1 : state.pos - 1,
+        dotIndex: state.dotIndex,
       };
     case 'RIGHT':
       return {
@@ -45,8 +56,10 @@ function reducer(state, { type, numItems }) {
         dir: 'RIGHT',
         sliding: true,
         pos: state.pos === numItems - 1 ? 0 : state.pos + 1,
+        dotIndex: state.dotIndex,
       };
     case 'STOP':
+      console.log('in stop', state.dotIndex);
       return { ...state, sliding: false };
     default:
       return state;
@@ -56,17 +69,73 @@ function reducer(state, { type, numItems }) {
 const GraphCarousel = props => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const numItems = React.Children.count(props.children);
+  const [dots, setDots] = useState(
+    <CarouselDots>
+      {' '}
+      • <SelectedDot>•</SelectedDot> • •{' '}
+    </CarouselDots>
+  );
   const slide = dir => {
+    console.log('before dir dispatch', state.dotIndex);
     dispatch({ type: dir, numItems });
+    console.log('before timeout', state.dotIndex);
     setTimeout(() => {
       dispatch({ type: 'STOP' });
+      console.log('in timeout', state.dotIndex);
     }, 50);
   };
+
+  const colorDot = () => {
+    if (state.dotIndex === 0) {
+      setDots(
+        <CarouselDots>
+          {' '}
+          <SelectedDot>•</SelectedDot> • • •{' '}
+        </CarouselDots>
+      );
+    } else if (state.dotIndex === 1) {
+      setDots(
+        <CarouselDots>
+          {' '}
+          • <SelectedDot>•</SelectedDot> • •{' '}
+        </CarouselDots>
+      );
+    } else if (state.dotIndex === 2) {
+      setDots(
+        <CarouselDots>
+          {' '}
+          • • <SelectedDot>•</SelectedDot> •{' '}
+        </CarouselDots>
+      );
+    } else if (state.dotIndex === 3) {
+      setDots(
+        <CarouselDots>
+          {' '}
+          • • • <SelectedDot>•</SelectedDot>{' '}
+        </CarouselDots>
+      );
+    }
+  };
+
   const handlers = useSwipeable({
-    onSwipedLeft: () => slide('RIGHT'),
-    onSwipedRight: () => slide('LEFT'),
+    onSwipedLeft: () => {
+      state.dotIndex + 1 > 3
+        ? (state.dotIndex = 0)
+        : (state.dotIndex = state.dotIndex + 1);
+      console.log(state.dotIndex);
+      colorDot();
+      slide('RIGHT');
+    },
+    onSwipedRight: () => {
+      state.dotIndex - 1 < 0
+        ? (state.dotIndex = 3)
+        : (state.dotIndex = state.dotIndex - 1);
+      console.log(state.dotIndex);
+      colorDot();
+      slide('LEFT');
+    },
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
+    trackMouse: false,
   });
   return (
     <div {...handlers}>
@@ -81,6 +150,7 @@ const GraphCarousel = props => {
             </CarouselSlot>
           ))}
         </CarouselContainer>
+        {dots}
       </Wrapper>
     </div>
   );
