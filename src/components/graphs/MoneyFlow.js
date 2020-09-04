@@ -15,6 +15,7 @@ const MoneyFlowContainer = styled.div`
     padding: 0;
     margin: 0;
     flex-direction: column;
+    border-bottom: 0;
   }
 `;
 const MoneyFlowInfo = styled.div`

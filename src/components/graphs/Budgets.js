@@ -13,12 +13,14 @@ const BudgetsContainer = styled.div`
     padding: 0;
     margin: 0;
     flex-direction: column-reverse;
+    border-bottom: 0;
   }
 `;
 const BudgetsInfo = styled.div`
   margin: 0 auto;
   width: 50%;
   @media (max-width: 765px) {
+    width: 100%;
     text-align: center;
     margin: 0;
   }
