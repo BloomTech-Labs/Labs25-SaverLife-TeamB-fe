@@ -7,27 +7,9 @@ import {
   GraphCarousel,
 } from '../graphs';
 import Media from 'react-media';
-import styled from 'styled-components';
+import { RenderGraphWrapper } from './styles/GraphStyles';
 
 import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
-
-const GraphWrapper = styled.div`
-@media (max-width: 765px) {
-    width: 600px;
-    margin: 0 auto;
-@media (max-width: 600px) {
-    width: 500px;
-    margin: 0 auto;
-@media (max-width: 500px) {
-    width: 400px;
-    margin: 0 auto;
-@media (max-width: 400px) {
-    width: 300px;
-    margin: 0 auto;
-@media (max-width: 300px) {
-    width: 250px;
-    margin: 0 auto;
-`;
 
 const RenderGraphs = () => {
   const { authState } = useOktaAuth();
@@ -58,24 +40,24 @@ const RenderGraphs = () => {
         query="(max-width: 765px)"
         render={() => (
           <GraphCarousel>
-            <GraphWrapper>
+            <RenderGraphWrapper>
               <MoneyFlow
                 authState={authState}
                 url={process.env.REACT_APP_API_URI + 'data/moneyflow'}
               />
-            </GraphWrapper>
-            <GraphWrapper>
+            </RenderGraphWrapper>
+            <RenderGraphWrapper>
               <SpendingPost
                 authState={authState}
                 url={process.env.REACT_APP_API_URI + 'data/spending'}
               />
-            </GraphWrapper>
-            <GraphWrapper>
+            </RenderGraphWrapper>
+            <RenderGraphWrapper>
               <Budgets />
-            </GraphWrapper>
-            <GraphWrapper>
+            </RenderGraphWrapper>
+            <RenderGraphWrapper>
               <ComparedSpendings />
-            </GraphWrapper>
+            </RenderGraphWrapper>
           </GraphCarousel>
         )}
       />
