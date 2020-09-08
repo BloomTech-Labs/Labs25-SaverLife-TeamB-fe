@@ -60,6 +60,31 @@ const getMoneyFlow = (url, authState) => {
     .catch(err => err);
 };
 
+const getFutureBudget = (url, authState) => {
+  var headers = getAuthHeader(authState);
+  var headers = { ...headers, user_id: '00ulthapbErVUwVJy4x6' };
+  console.log(headers);
+  if (!url) {
+    throw new Error('No URL provided');
+  }
+  return axios
+    .get(url, { headers })
+    .then(res => res.data)
+    .catch(err => err);
+};
+
+const getCurrentMonthSpending = (url, authState) => {
+  var headers = getAuthHeader(authState);
+  var headers = { ...headers, user_id: '00ulthapbErVUwVJy4x6' };
+  if (!url) {
+    throw new Error('No URL provided');
+  }
+  return axios
+    .get(url, { headers })
+    .then(res => res.data)
+    .catch(err => err);
+};
+
 const apiAuthGet = authHeader => {
   return axios.get(apiUrl, { headers: authHeader });
 };
@@ -75,4 +100,12 @@ const getProfileData = authState => {
   }
 };
 
-export { sleep, getExampleData, getProfileData, getDSData, getMoneyFlow };
+export {
+  sleep,
+  getExampleData,
+  getProfileData,
+  getDSData,
+  getMoneyFlow,
+  getFutureBudget,
+  getCurrentMonthSpending,
+};

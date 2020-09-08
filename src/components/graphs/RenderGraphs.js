@@ -30,7 +30,11 @@ const RenderGraphs = () => {
               url={process.env.REACT_APP_API_URI + 'data/spending'}
             />
 
-            <Budgets />
+            <Budgets
+              authState={authState}
+              url={process.env.REACT_APP_API_URI + 'data/futureBudget'}
+              url2={process.env.REACT_APP_API_URI + 'data/currentMonthSpending'}
+            />
 
             <ComparedSpendings />
           </>
@@ -53,7 +57,13 @@ const RenderGraphs = () => {
               />
             </RenderGraphWrapper>
             <RenderGraphWrapper>
-              <Budgets />
+              <Budgets
+                authState={authState}
+                url={process.env.REACT_APP_API_URI + 'data/futureBudget'}
+                url2={
+                  process.env.REACT_APP_API_URI + 'data/currentMonthSpending'
+                }
+              />
             </RenderGraphWrapper>
             <RenderGraphWrapper>
               <ComparedSpendings />
