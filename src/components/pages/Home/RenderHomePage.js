@@ -10,10 +10,7 @@ function RenderHomePage(props) {
     <HomeWrapper>
       <Nav authService={authService} />
       <HeaderContainer>
-        <h1>Hi {userInfo.name} Welcome to your SaverLife Dashboard!</h1>
-        <div>
-          <p>Here is your spendings and savings history in graphs.</p>
-        </div>
+        <h1>Here is your spendings and savings history in graphs.</h1>
       </HeaderContainer>
 
       <RenderGraphs />

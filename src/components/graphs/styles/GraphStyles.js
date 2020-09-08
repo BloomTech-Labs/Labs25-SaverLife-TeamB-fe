@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const BudgetsContainer = styled.div`
+  display: flex;
   margin: 0 auto;
-  padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
-  @media (max-width: 765px) {
+  padding-top: 5% @media (max-width: 765px) {
     display: flex;
     width: 100%;
     padding: 0;
@@ -27,8 +27,9 @@ export const BudgetsInfo = styled.div`
 export const SavingsGraphContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 5%;
   width: 80%;
+  border-bottom: 1px solid #e266b5;
+  padding-top: 5%;
   @media (max-width: 765px) {
     width: 100%;
     padding: 0;
@@ -47,9 +48,9 @@ export const SavingsGraphInfo = styled.div`
 export const MoneyFlowContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  padding-top: 5%;
   @media (max-width: 765px) {
     width: 100%;
     padding: 0;
@@ -86,9 +87,9 @@ export const RenderGraphWrapper = styled.div`
 export const SpendingContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  padding-top: 5%;
   @media (max-width: 765px) {
     width: 100%;
     padding: 0;
