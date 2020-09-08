@@ -6,9 +6,9 @@ import { getDSData } from '../../api';
 const SpendingContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 5%;
   width: 80%;
   border-bottom: 1px solid #e266b5;
+  padding-top: 5%;
   @media (max-width: 765px) {
     width: 100%;
     padding: 0;

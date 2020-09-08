@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const SavingsGraphContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 5%;
+  padding-top: 5%;
   width: 80%;
   @media (max-width: 765px) {
     width: 100%;
