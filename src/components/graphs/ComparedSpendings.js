@@ -1,26 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import styled from 'styled-components';
-
-const SavingsGraphContainer = styled.div`
-  display: flex;
-  margin: 0 auto;
-  padding-top: 5%;
-  width: 80%;
-  @media (max-width: 765px) {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-  }
-`;
-const SavingsGraphInfo = styled.div`
-  margin: 0 auto;
-  @media (max-width: 765px) {
-    text-align: center;
-    margin: 0;
-  }
-`;
+import { SavingsGraphContainer, SavingsGraphInfo } from './styles/GraphStyles';
 
 function ComparedSpendings() {
   var trace1 = {

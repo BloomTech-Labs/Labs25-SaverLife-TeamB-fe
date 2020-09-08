@@ -1,29 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
-import styled from 'styled-components';
 import { getDSData } from '../../api';
-
-const SpendingContainer = styled.div`
-  display: flex;
-  margin: 0 auto;
-  width: 80%;
-  border-bottom: 1px solid #e266b5;
-  padding-top: 5%;
-  @media (max-width: 765px) {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    border-bottom: 0;
-  }
-`;
-const SpendingInfo = styled.div`
-  margin: 0 auto;
-  @media (max-width: 765px) {
-    text-align: center;
-    margin: 0;
-  }
-`;
+import { SpendingContainer, SpendingInfo } from './styles/GraphStyles';
 
 const initialState = {
   data: [],
