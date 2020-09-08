@@ -1,34 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import Plot from 'react-plotly.js';
-import styled from 'styled-components';
-import { ProgressBar, Button } from 'react-bootstrap';
-
-const BudgetsContainer = styled.div`
-  margin: 0 auto;
-  padding: 5%;
-  width: 80%;
-  border-bottom: 1px solid #e266b5;
-  @media (max-width: 765px) {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    flex-direction: column-reverse;
-    border-bottom: 0;
-  }
-`;
-const BudgetsInfo = styled.div`
-  margin: 0 auto;
-  width: 50%;
-  @media (max-width: 765px) {
-    width: 100%;
-    text-align: center;
-    margin: 0;
-  }
-`;
-
-// const initialState ={
-
-// };
+import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
+import { BudgetsContainer, BudgetsInfo } from './styles/GraphStyles';
 
 const category1 = 'Food';
 const currentSpending1 = 562;
