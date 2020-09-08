@@ -1,44 +1,17 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import styled from 'styled-components';
-import { Select } from 'antd';
+import {
+  CarouselWrapper,
+  CarouselSlot,
+  CarouselContainer,
+  CarouselDots,
+  SelectedDot,
+} from './styles/CarouselStyles';
 
 const getOrder = ({ index, pos, numItems }) => {
   return index - pos < 0 ? numItems - Math.abs(index - pos) : index - pos;
 };
 const initialState = { pos: 0, sliding: false, dir: 'RIGHT', dotIndex: 1 };
-
-const Wrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
-`;
-
-const CarouselSlot = styled.div`
-  flex: 1 0 100%;
-  flex-basis: 100%;
-  margin-right: 0px;
-  order: ${props => props.order};
-`;
-
-const CarouselContainer = styled.div`
-  display: flex;
-  transition: ${props => (props.sliding ? 'none' : 'transform 1s ease')};
-  transform: ${props => {
-    if (!props.sliding) return 'translateX(calc(-100%))';
-    if (props.dir === 'LEFT') return 'translateX(calc(2 * (-100%)))';
-    return 'translateX(0%)';
-  }};
-`;
-
-const CarouselDots = styled.p`
-  font-size: 2.5rem;
-  letter-spacing: 0.8rem;
-`;
-
-const SelectedDot = styled.span`
-  font-size: 3.5rem;
-  color: rgb(189, 35, 125);
-`;
 
 function reducer(state, { type, numItems }) {
   switch (type) {
@@ -139,7 +112,7 @@ const GraphCarousel = props => {
   });
   return (
     <div {...handlers}>
-      <Wrapper>
+      <CarouselWrapper>
         <CarouselContainer dir={state.dir} sliding={state.sliding}>
           {React.Children.map(props.children, (child, index) => (
             <CarouselSlot
@@ -151,7 +124,7 @@ const GraphCarousel = props => {
           ))}
         </CarouselContainer>
         {dots}
-      </Wrapper>
+      </CarouselWrapper>
     </div>
   );
 };
