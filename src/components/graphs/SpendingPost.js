@@ -30,7 +30,7 @@ function SpendingPost(props) {
         <Plot
           data={data.data}
           useResizeHandler
-          style={{ width: '100%', height: 400 }}
+          style={{ width: '100%', height: 500 }}
           layout={
             (data.layout,
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
@@ -39,8 +39,8 @@ function SpendingPost(props) {
       </SpendingInfo>
 
       <SpendingInfo>
-        <h1>Your Savings this Month</h1>
-        <p>You saved this much in this category this month.</p>
+        <h1>Your Spendings this Month</h1>
+        <p>You spent this much in this category this month.</p>
       </SpendingInfo>
     </SpendingContainer>
   );
