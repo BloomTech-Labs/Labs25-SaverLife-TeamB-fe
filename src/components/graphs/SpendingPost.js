@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
-import { getDSData } from '../../api';
+import { getSpending } from '../../api';
 import { SpendingContainer, SpendingInfo } from './styles/GraphStyles';
 
 const initialState = {
@@ -11,11 +11,9 @@ const initialState = {
 function SpendingPost(props) {
   const [data, setData] = useState(initialState);
 
-  console.log(data);
-
   useEffect(() => {
     function fetchDSData() {
-      getDSData(props.url, props.authState)
+      getSpending(props.url, props.authState)
         .then(res => {
           setData(res);
         })

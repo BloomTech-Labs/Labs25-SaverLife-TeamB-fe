@@ -11,8 +11,6 @@ const initialState = {
 function MoneyFlow(props) {
   const [data, setData] = useState(initialState);
 
-  console.log(data);
-
   useEffect(() => {
     function fetchDSData() {
       getMoneyFlow(props.url, props.authState)
