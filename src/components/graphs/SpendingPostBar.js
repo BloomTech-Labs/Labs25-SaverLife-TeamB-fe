@@ -27,8 +27,7 @@ function SpendingPostBar(props) {
   return (
     <SpendingBarContainer>
       <SpendingInfo>
-        <h1>Your Spendings this Week</h1>
-        <p>You spent this much in this category this week.</p>
+        <h1>Daily Spending by Category for the Last Week</h1>
       </SpendingInfo>
 
       <Plot
