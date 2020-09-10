@@ -30,7 +30,7 @@ function SpendingPostBar(props) {
         <Plot
           data={data.data}
           useResizeHandler
-          style={{ width: '100%', height: 400 }}
+          style={{ width: '100%', height: 500 }}
           layout={
             (data.layout,
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
