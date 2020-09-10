@@ -2,6 +2,7 @@ import React from 'react';
 import {
   MoneyFlow,
   SpendingPost,
+  SpendingPostBar,
   Budgets,
   ComparedSpendings,
   GraphCarousel,
@@ -26,6 +27,11 @@ const RenderGraphs = () => {
             />
 
             <SpendingPost
+              authState={authState}
+              url={process.env.REACT_APP_API_URI + 'data/spending'}
+            />
+
+            <SpendingPostBar
               authState={authState}
               url={process.env.REACT_APP_API_URI + 'data/spending'}
             />
@@ -63,6 +69,13 @@ const RenderGraphs = () => {
             </RenderGraphWrapper>
             <RenderGraphWrapper>
               <ComparedSpendings />
+            </RenderGraphWrapper>
+
+            <RenderGraphWrapper>
+              <SpendingPostBar
+                authState={authState}
+                url={process.env.REACT_APP_API_URI + 'data/spending'}
+              />
             </RenderGraphWrapper>
           </GraphCarousel>
         )}
