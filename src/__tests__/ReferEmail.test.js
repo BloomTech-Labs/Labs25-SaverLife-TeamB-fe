@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ReferEmail } from '../components/pages/Refer';
 
@@ -12,5 +12,18 @@ describe('Loading Common Component', () => {
     );
     const h1 = getByText(/Refer a Friend!/i);
     expect(h1.textContent).toBe('Refer a Friend!');
+  });
+});
+
+describe('click buttons', () => {
+  test('click submit button', () => {
+    const { getByText } = render(
+      <Router>
+        <ReferEmail />
+      </Router>
+    );
+    const clickButton = getByText(/Submit/i);
+    fireEvent.click(clickButton);
+    expect(clickButton.innerHTML).toBe('Submit');
   });
 });
