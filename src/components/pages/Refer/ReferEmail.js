@@ -9,8 +9,13 @@ const ReferEmail = props => {
     <HomeWrapper>
       <Nav authService={authService} />
       <HeaderContainer>
-        <h1>Refer a Friend!</h1>
-        <form onSubmit={e => e.preventDefault()}>
+        <h1 style={{ textAlignVertical: 'center', textAlign: 'center' }}>
+          Refer a Friend!
+        </h1>
+        <form
+          onSubmit={e => e.preventDefault()}
+          style={{ textAlignVertical: 'center', textAlign: 'center' }}
+        >
           <FormInput
             placeholder="Email"
             name="email"
