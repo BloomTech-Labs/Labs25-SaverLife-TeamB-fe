@@ -61,7 +61,7 @@ function App() {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
-        <Route path="/refer" component={ReferEmail} />
+        <SecureRoute path="/refer" component={ReferEmail} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
