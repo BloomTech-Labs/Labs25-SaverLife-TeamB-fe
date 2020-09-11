@@ -42,7 +42,7 @@ const getSpendingBar = (url, authState) => {
         user_ID: '00ulthapbErVUwVJy4x6',
         time_period: 'week',
         graph_type: 'bar',
-        color_template: 'dense',
+        color_template: 'Burg',
       },
       { headers }
     )
