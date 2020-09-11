@@ -21,6 +21,28 @@ const getSpending = (url, authState) => {
         user_ID: '00ulthapbErVUwVJy4x6',
         time_period: 'week',
         graph_type: 'pie',
+        color_template: 'dense',
+        hole: 0.4,
+      },
+      { headers }
+    )
+    .then(res => JSON.parse(res.data))
+    .catch(err => err);
+};
+
+const getSpendingBar = (url, authState) => {
+  const headers = getAuthHeader(authState);
+  if (!url) {
+    throw new Error('No URL provided');
+  }
+  return axios
+    .post(
+      url,
+      {
+        user_ID: '00ulthapbErVUwVJy4x6',
+        time_period: 'week',
+        graph_type: 'bar',
+        color_template: 'Burg',
       },
       { headers }
     )
@@ -99,4 +121,5 @@ export {
   getMoneyFlow,
   getFutureBudget,
   postFutureBudget,
+  getSpendingBar,
 };

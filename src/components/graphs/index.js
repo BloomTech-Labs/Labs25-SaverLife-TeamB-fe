@@ -1,5 +1,5 @@
 export { default as MoneyFlow } from './MoneyFlow';
-
+export { default as SpendingPostBar } from './SpendingPostBar';
 export { default as SpendingPost } from './SpendingPost';
 export { default as Budgets } from './Budgets';
 export { default as ComparedSpendings } from './ComparedSpendings';

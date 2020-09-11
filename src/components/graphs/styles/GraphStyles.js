@@ -105,3 +105,17 @@ export const SpendingInfo = styled.div`
     margin: 0;
   }
 `;
+
+export const SpendingBarContainer = styled.div`
+  margin: 0 auto;
+  width: 80%;
+  border-bottom: 1px solid #e266b5;
+  padding-top: 5%;
+  @media (max-width: 765px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    border-bottom: 0;
+  }
+`;
