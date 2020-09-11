@@ -1,10 +1,16 @@
 import React from 'react';
+import Nav from '../Nav/Nav';
+import { HomeWrapper, HeaderContainer } from '../Home/styles/HomeStyles';
 
-const ReferEmail = () => {
+const ReferEmail = props => {
+  const { userInfo, authService } = props;
   return (
-    <div>
-      <h1>Refer a Friend!</h1>
-    </div>
+    <HomeWrapper>
+      <Nav authService={authService} />
+      <HeaderContainer>
+        <h1>Refer a Friend!</h1>
+      </HeaderContainer>
+    </HomeWrapper>
   );
 };
 
