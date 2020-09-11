@@ -13,6 +13,15 @@ describe('Loading Common Component', () => {
     const h1 = getByText(/Refer a Friend!/i);
     expect(h1.textContent).toBe('Refer a Friend!');
   });
+  test('it should mount a div based on props for h1', () => {
+    const { getByText } = render(
+      <Router>
+        <ReferEmail />
+      </Router>
+    );
+    const labelId = getByText(/Friend's Email/i);
+    expect(labelId.textContent).toBe("Friend's Email");
+  });
 });
 
 describe('click buttons', () => {
