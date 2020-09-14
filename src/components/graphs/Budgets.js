@@ -44,6 +44,7 @@ function Budgets(props) {
       </BudgetsInfo>
 
       <BudgetsInfo>
+        {/* key represents spending categories */}
         {Object.keys(data).map(key => {
           console.log(key);
           return (
