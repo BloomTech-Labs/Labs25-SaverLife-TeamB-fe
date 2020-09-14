@@ -18,7 +18,7 @@ const getSpending = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '00ulthapbErVUwVJy4x6',
+        user_id: '00ulthapbErVUwVJy4x6',
         time_period: 'week',
         graph_type: 'pie',
         color_template: 'dense',
@@ -39,7 +39,7 @@ const getSpendingBar = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '00ulthapbErVUwVJy4x6',
+        user_id: '00ulthapbErVUwVJy4x6',
         time_period: 'week',
         graph_type: 'bar',
         color_template: 'Burg',
@@ -59,7 +59,7 @@ const getMoneyFlow = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '00ulthapbErVUwVJy4x6',
+        user_id: '00ulthapbErVUwVJy4x6',
         time_period: 'week',
       },
       { headers }
