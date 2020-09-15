@@ -13,7 +13,7 @@ function MoneyFlow(props) {
 
   useEffect(() => {
     function fetchDSData() {
-      getMoneyFlow(props.url, props.authState)
+      getMoneyFlow(props.url, props.authState, props.userInfo)
         .then(res => {
           setData(res);
         })
@@ -23,7 +23,7 @@ function MoneyFlow(props) {
         });
     }
     fetchDSData();
-  }, [props.url, props.authState]);
+  }, [props.url, props.authState, props.userInfo]);
 
   return (
     <MoneyFlowContainer>

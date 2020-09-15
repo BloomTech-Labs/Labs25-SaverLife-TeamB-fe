@@ -12,7 +12,7 @@ function Budgets(props) {
 
   useEffect(() => {
     function fetchDSData() {
-      getFutureBudget(props.url, props.authState)
+      getFutureBudget(props.url, props.authState, props.userInfo)
         .then(res => {
           setData(res);
         })
@@ -22,7 +22,7 @@ function Budgets(props) {
         });
     }
     fetchDSData();
-  }, [props.url, props.authState]);
+  }, [props.url, props.authState, props.userInfo]);
 
   const checkProgressColor = percentage => {
     if (percentage < 50) {
