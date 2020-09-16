@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
-import { BudgetsContainer, BudgetsInfo } from '../../graphs/styles/GraphStyles';
+import { BudgetsContainer, BudgetsInfo } from './styles/BudgetStyles';
 import Nav from '../Nav/Nav';
 
 const category1 = 'Food';
