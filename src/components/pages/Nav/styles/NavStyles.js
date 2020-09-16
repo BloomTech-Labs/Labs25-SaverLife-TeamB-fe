@@ -26,7 +26,7 @@ export const SLLogo = styled.img`
   }
 `;
 
-export const LogoutButton = styled.button`
+export const Button = styled.button`
   border: 1px solid rgb(189, 35, 125);
   color: rgb(189, 35, 125);
   border-radius: 12px;
