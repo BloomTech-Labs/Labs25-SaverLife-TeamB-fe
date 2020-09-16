@@ -10,11 +10,8 @@ import {
 import Media from 'react-media';
 import { RenderGraphWrapper } from './styles/GraphStyles';
 
-import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
-
-const RenderGraphs = () => {
-  const { authState } = useOktaAuth();
-
+const RenderGraphs = props => {
+  const { userInfo, authState } = props;
   return (
     <>
       <Media
@@ -23,21 +20,25 @@ const RenderGraphs = () => {
           <>
             <MoneyFlow
               authState={authState}
+              userInfo={userInfo}
               url={process.env.REACT_APP_API_URI + 'data/moneyflow'}
             />
 
             <SpendingPost
               authState={authState}
+              userInfo={userInfo}
               url={process.env.REACT_APP_API_URI + 'data/spending'}
             />
 
             <SpendingPostBar
               authState={authState}
+              userInfo={userInfo}
               url={process.env.REACT_APP_API_URI + 'data/spending'}
             />
 
             <Budgets
               authState={authState}
+              userInfo={userInfo}
               url={process.env.REACT_APP_API_URI + 'data/futureBudget'}
             />
 
@@ -52,18 +53,21 @@ const RenderGraphs = () => {
             <RenderGraphWrapper>
               <MoneyFlow
                 authState={authState}
+                userInfo={userInfo}
                 url={process.env.REACT_APP_API_URI + 'data/moneyflow'}
               />
             </RenderGraphWrapper>
             <RenderGraphWrapper>
               <SpendingPost
                 authState={authState}
+                userInfo={userInfo}
                 url={process.env.REACT_APP_API_URI + 'data/spending'}
               />
             </RenderGraphWrapper>
             <RenderGraphWrapper>
               <Budgets
                 authState={authState}
+                userInfo={userInfo}
                 url={process.env.REACT_APP_API_URI + 'data/futureBudget'}
               />
             </RenderGraphWrapper>
@@ -74,6 +78,7 @@ const RenderGraphs = () => {
             <RenderGraphWrapper>
               <SpendingPostBar
                 authState={authState}
+                userInfo={userInfo}
                 url={process.env.REACT_APP_API_URI + 'data/spending'}
               />
             </RenderGraphWrapper>

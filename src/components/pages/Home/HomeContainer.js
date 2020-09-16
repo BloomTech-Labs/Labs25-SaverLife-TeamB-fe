@@ -27,14 +27,17 @@ function HomeContainer({ LoadingComponent }) {
       });
     return () => (isSubscribed = false);
   }, [memoAuthService]);
-
   return (
     <>
       {authState.isAuthenticated && !userInfo && (
         <LoadingComponent message="Fetching user profile..." />
       )}
       {authState.isAuthenticated && userInfo && (
-        <RenderHomePage userInfo={userInfo} authService={authService} />
+        <RenderHomePage
+          userInfo={userInfo}
+          authService={authService}
+          authState={authState}
+        />
       )}
     </>
   );

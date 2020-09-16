@@ -4,7 +4,7 @@ import RenderGraphs from '../../graphs/RenderGraphs';
 import { HomeWrapper, HeaderContainer } from './styles/HomeStyles';
 
 function RenderHomePage(props) {
-  const { userInfo, authService } = props;
+  const { userInfo, authService, authState } = props;
 
   return (
     <HomeWrapper>
@@ -13,7 +13,7 @@ function RenderHomePage(props) {
         <h1>Here is your spendings and savings history in graphs.</h1>
       </HeaderContainer>
 
-      <RenderGraphs />
+      <RenderGraphs userInfo={userInfo} authState={authState} />
     </HomeWrapper>
   );
 }
