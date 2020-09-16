@@ -13,7 +13,7 @@ function SpendingPostBar(props) {
 
   useEffect(() => {
     function fetchDSData() {
-      getSpendingBar(props.url, props.authState)
+      getSpendingBar(props.url, props.authState, props.userInfo)
         .then(res => {
           setData(res);
         })
@@ -22,7 +22,7 @@ function SpendingPostBar(props) {
         });
     }
     fetchDSData();
-  }, [props.url, props.authState]);
+  }, [props.url, props.authState, props.userInfo]);
 
   return (
     <SpendingBarContainer>

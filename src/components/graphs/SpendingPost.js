@@ -13,7 +13,7 @@ function SpendingPost(props) {
 
   useEffect(() => {
     function fetchDSData() {
-      getSpending(props.url, props.authState)
+      getSpending(props.url, props.authState, props.userInfo)
         .then(res => {
           setData(res);
         })
@@ -22,7 +22,7 @@ function SpendingPost(props) {
         });
     }
     fetchDSData();
-  }, [props.url, props.authState]);
+  }, [props.url, props.authState, props.userInfo]);
 
   return (
     <SpendingContainer>

@@ -9,7 +9,7 @@ const getAuthHeader = authState => {
   return { Authorization: `Bearer ${authState.idToken}` };
 };
 
-const getSpending = (url, authState) => {
+const getSpending = (url, authState, userInfo) => {
   const headers = getAuthHeader(authState);
   if (!url) {
     throw new Error('No URL provided');
@@ -18,7 +18,7 @@ const getSpending = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '00ulthapbErVUwVJy4x6',
+        user_id: `${userInfo.sub}`,
         time_period: 'week',
         graph_type: 'pie',
         color_template: 'dense',
@@ -30,7 +30,7 @@ const getSpending = (url, authState) => {
     .catch(err => err);
 };
 
-const getSpendingBar = (url, authState) => {
+const getSpendingBar = (url, authState, userInfo) => {
   const headers = getAuthHeader(authState);
   if (!url) {
     throw new Error('No URL provided');
@@ -39,7 +39,7 @@ const getSpendingBar = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '00ulthapbErVUwVJy4x6',
+        user_id: `${userInfo.sub}`,
         time_period: 'week',
         graph_type: 'bar',
         color_template: 'Burg',
@@ -50,7 +50,7 @@ const getSpendingBar = (url, authState) => {
     .catch(err => err);
 };
 
-const getMoneyFlow = (url, authState) => {
+const getMoneyFlow = (url, authState, userInfo) => {
   const headers = getAuthHeader(authState);
   if (!url) {
     throw new Error('No URL provided');
@@ -59,7 +59,7 @@ const getMoneyFlow = (url, authState) => {
     .post(
       url,
       {
-        user_ID: '00ulthapbErVUwVJy4x6',
+        user_id: `${userInfo.sub}`,
         time_period: 'week',
       },
       { headers }
@@ -68,9 +68,9 @@ const getMoneyFlow = (url, authState) => {
     .catch(err => err);
 };
 
-const getFutureBudget = (url, authState) => {
+const getFutureBudget = (url, authState, userInfo) => {
   var headers = getAuthHeader(authState);
-  var headers = { ...headers, user_id: '00ulthapbErVUwVJy4x6' };
+  var headers = { ...headers, user_id: `${userInfo.sub}` };
   console.log(headers);
   if (!url) {
     throw new Error('No URL provided');
@@ -81,7 +81,7 @@ const getFutureBudget = (url, authState) => {
     .catch(err => err);
 };
 
-const postFutureBudget = (url, authState) => {
+const postFutureBudget = (url, authState, userInfo) => {
   const headers = getAuthHeader(authState);
   if (!url) {
     throw new Error('No URL provided');
@@ -90,7 +90,7 @@ const postFutureBudget = (url, authState) => {
     .post(
       url,
       {
-        user_id: '00ulthapbErVUwVJy4x6',
+        user_id: `${userInfo.sub}`,
         monthly_savings_goal: 400,
         placeholder: 'Shopping, Auto, Utilities',
       },
