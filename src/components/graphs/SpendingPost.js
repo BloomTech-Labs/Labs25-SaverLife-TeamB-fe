@@ -39,8 +39,11 @@ function SpendingPost(props) {
       </SpendingInfo>
 
       <SpendingInfo>
-        <h1>Your Spendings this Month</h1>
-        <p>You spent this much in this category this month.</p>
+        <h1>Monthly Spending</h1>
+        <p>
+          Here are your spendings this month. You spent this much in this
+          category this month.
+        </p>
       </SpendingInfo>
     </SpendingContainer>
   );

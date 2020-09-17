@@ -37,9 +37,10 @@ function Budgets(props) {
   return (
     <BudgetsContainer>
       <BudgetsInfo>
-        <h1>Here are your Budgets for this month</h1>
+        <h1>Monthly Budgets</h1>
         <p>
-          You saved this much in this category from your budgeting this month.
+          Here are your Budgets for this month. You saved this much in this
+          category from your budgeting this month.
         </p>
       </BudgetsInfo>
 

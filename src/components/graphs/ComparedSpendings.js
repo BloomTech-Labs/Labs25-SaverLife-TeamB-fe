@@ -23,7 +23,7 @@ function ComparedSpendings() {
         <Plot
           data={data}
           useResizeHandler
-          style={{ width: '100%', height: 400 }}
+          style={{ width: '100%', height: 500 }}
           layout={{
             autosize: true,
             title: 'Your Spendings',
@@ -34,8 +34,11 @@ function ComparedSpendings() {
       </SavingsGraphInfo>
 
       <SavingsGraphInfo>
-        <h1>Your Spendings this Month</h1>
-        <p>You spent this much in this category this month compared to last.</p>
+        <h1>Compared Monthly Spending</h1>
+        <p>
+          Here is your spending over the last month. You spent this much in this
+          category this month compared to last.
+        </p>
       </SavingsGraphInfo>
     </SavingsGraphContainer>
   );

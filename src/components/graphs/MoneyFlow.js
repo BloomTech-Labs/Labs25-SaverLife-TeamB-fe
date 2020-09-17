@@ -28,14 +28,15 @@ function MoneyFlow(props) {
   return (
     <MoneyFlowContainer>
       <MoneyFlowInfo>
-        <h1>Your Money Flow this Past Month</h1>
+        <h1>Money Flow</h1>
+        <p>Here is your money flow for this past month</p>
       </MoneyFlowInfo>
 
       <MoneyFlowInfo>
         <Plot
           data={data.data}
           useResizeHandler
-          style={{ width: '100%', height: 400 }}
+          style={{ width: '100%', height: 500 }}
           layout={
             (data.layout,
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
