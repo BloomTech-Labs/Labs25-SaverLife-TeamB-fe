@@ -4,7 +4,6 @@ import { useOktaAuth } from '@okta/okta-react';
 import Budgets from './Budgets';
 
 function BudgetsContainer({ LoadingComponent }) {
-  console.log('ERRROR');
   const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
   // eslint-disable-next-line
