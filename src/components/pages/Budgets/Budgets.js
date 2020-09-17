@@ -1,26 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ProgressBar } from 'react-bootstrap';
-import { BudgetsContainer, BudgetsInfo } from './styles/BudgetStyles';
+import { BudgetsHolder, BudgetsInfo } from './styles/BudgetStyles';
+import { getFutureBudget } from '../../../api';
 import Nav from '../Nav/Nav';
 
-const category1 = 'Food';
-const currentSpending1 = 562;
-const maxSpending1 = 1000;
+const initialState = {
+  data: {},
+};
 
-const category2 = 'Entertainment';
-const currentSpending2 = 270;
-const maxSpending2 = 788;
+function Budgets({ url, authState, userInfo, authService }) {
+  const [data, setData] = useState(initialState);
+  useEffect(() => {
+    function fetchDSData() {
+      getFutureBudget(url, authState, userInfo)
+        .then(res => {
+          setData(res);
+        })
+        .catch(err => {
+          setData({ data: null, err });
+          console.log(err);
+        });
+    }
+    fetchDSData();
+  }, [url, authState, userInfo]);
 
-const category3 = 'Utilities';
-const currentSpending3 = 455;
-const maxSpending3 = 566;
-
-const category4 = 'Medical';
-const currentSpending4 = 100;
-const maxSpending4 = 420;
-
-function Budgets(props) {
-  const { userInfo, authService } = props;
   const checkProgressColor = percentage => {
     if (percentage < 50) {
       return 'success';
@@ -30,11 +33,11 @@ function Budgets(props) {
       return 'warning';
     }
   };
-
+  console.log('budget data', data);
   return (
     <>
       <Nav authService={authService} />
-      <BudgetsContainer>
+      <BudgetsHolder>
         <BudgetsInfo>
           <h1>Here are your Budgets for this month</h1>
           <p>
@@ -43,56 +46,29 @@ function Budgets(props) {
         </BudgetsInfo>
 
         <BudgetsInfo>
-          <h6>{category1}</h6>
-          <ProgressBar
-            now={(currentSpending1 / maxSpending1) * 100}
-            animated
-            striped
-            variant={checkProgressColor(
-              (currentSpending1 / maxSpending1) * 100
-            )}
-            label={`$${currentSpending1}`}
-          />
-          <p>${maxSpending1}</p>
-
-          <h6>{category2}</h6>
-          <ProgressBar
-            now={(currentSpending2 / maxSpending2) * 100}
-            animated
-            striped
-            variant={checkProgressColor(
-              (currentSpending2 / maxSpending2) * 100
-            )}
-            label={`$${currentSpending2}`}
-          />
-          <p>${maxSpending2}</p>
-
-          <h6>{category3}</h6>
-          <ProgressBar
-            now={(currentSpending3 / maxSpending3) * 100}
-            animated
-            striped
-            variant={checkProgressColor(
-              (currentSpending3 / maxSpending3) * 100
-            )}
-            label={`$${currentSpending3}`}
-          />
-          <p>${maxSpending3}</p>
-
-          <h6>{category4}</h6>
-          <ProgressBar
-            now={(currentSpending4 / maxSpending4) * 100}
-            animated
-            striped
-            variant={checkProgressColor(
-              (currentSpending4 / maxSpending4) * 100
-            )}
-            label={`$${currentSpending4}`}
-          />
-          <p>${maxSpending4}</p>
+          {/* key represents spending categories */}
+          {Object.keys(data).map(key => {
+            console.log(key);
+            return (
+              <>
+                <h6>{key}</h6>
+                <ProgressBar
+                  label={`${data[key].currSpending}`}
+                  now={(data[key].currSpending / data[key].maxSpending) * 100}
+                  animated
+                  striped
+                  variant={checkProgressColor(
+                    (data[key].currSpending / data[key].maxSpending) * 100
+                  )}
+                />
+                <p>Spending Limit: ${data[key].maxSpending}</p>
+              </>
+            );
+          })}
         </BudgetsInfo>
-      </BudgetsContainer>
+      </BudgetsHolder>
     </>
   );
 }
+
 export default Budgets;
