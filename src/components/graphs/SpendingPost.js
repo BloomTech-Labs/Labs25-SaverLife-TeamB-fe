@@ -34,7 +34,7 @@ function SpendingPost(props) {
         <Plot
           data={data.data}
           useResizeHandler
-          style={{ width: '77.5%', height: 500 }}
+          style={{ width: '100%', height: 500 }}
           layout={
             (data.layout,
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
