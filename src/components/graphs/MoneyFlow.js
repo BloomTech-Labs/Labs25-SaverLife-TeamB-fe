@@ -28,10 +28,6 @@ function MoneyFlow(props) {
   return (
     <MoneyFlowContainer>
       <MoneyFlowInfo>
-        <h1>Your Money Flow this Past Week</h1>
-      </MoneyFlowInfo>
-
-      <MoneyFlowInfo>
         <Plot
           data={data.data}
           useResizeHandler
@@ -41,6 +37,10 @@ function MoneyFlow(props) {
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
           }
         />
+      </MoneyFlowInfo>
+
+      <MoneyFlowInfo>
+        <h1>Your Money Flow this Past Week</h1>
       </MoneyFlowInfo>
     </MoneyFlowContainer>
   );
