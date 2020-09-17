@@ -26,10 +26,7 @@ function SpendingPostBar(props) {
 
   return (
     <SpendingBarContainer>
-      <SpendingInfo>
-        <h1>Daily Spending by Category for the Last Week</h1>
-      </SpendingInfo>
-
+      <h1>Daily Spending by Category for the Last Week</h1>
       <Plot
         data={data.data}
         useResizeHandler
