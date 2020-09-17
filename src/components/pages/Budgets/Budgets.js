@@ -3,11 +3,12 @@ import { ProgressBar } from 'react-bootstrap';
 import { BudgetsHolder, BudgetsInfo } from './styles/BudgetStyles';
 import { getFutureBudget } from '../../../api';
 import Nav from '../Nav/Nav';
+
 const initialState = {
   data: {},
 };
 
-function Budgets({ url, authState, userInfo }) {
+function Budgets({ url, authState, userInfo, authService }) {
   const [data, setData] = useState(initialState);
   useEffect(() => {
     function fetchDSData() {
@@ -35,7 +36,7 @@ function Budgets({ url, authState, userInfo }) {
   console.log('budget data', data);
   return (
     <>
-      <Nav />
+      <Nav authService={authService} />
       <BudgetsHolder>
         <BudgetsInfo>
           <h1>Here are your Budgets for this month</h1>
