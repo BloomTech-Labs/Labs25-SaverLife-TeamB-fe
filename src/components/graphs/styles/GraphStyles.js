@@ -40,7 +40,6 @@ export const RenderGraphWrapper = styled.div`
 `;
 
 export const SpendingContainer = styled.div`
-  display: flex;
   margin: 0 auto;
   width: 80%;
   border-bottom: 1px solid #e266b5;
@@ -55,6 +54,7 @@ export const SpendingContainer = styled.div`
 `;
 export const SpendingInfo = styled.div`
   margin: 0 auto;
+  width: 50%;
   @media (max-width: 765px) {
     text-align: center;
     margin: 0;
