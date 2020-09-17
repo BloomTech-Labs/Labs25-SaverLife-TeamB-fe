@@ -19,9 +19,9 @@ const getSpending = (url, authState, userInfo) => {
       url,
       {
         user_id: `${userInfo.sub}`,
-        time_period: 'week',
+        time_period: 'month',
         graph_type: 'pie',
-        color_template: 'dense',
+        color_template: 'BuPu',
         hole: 0.4,
       },
       { headers }
