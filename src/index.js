@@ -17,6 +17,7 @@ import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { ReferEmail } from './components/pages/Refer';
+import { Budgets } from './components/pages/Budgets';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import { Provider } from 'react-redux';
@@ -62,6 +63,7 @@ function App() {
         />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/refer" component={ReferEmail} />
+        <SecureRoute path="/budget" component={Budgets} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
