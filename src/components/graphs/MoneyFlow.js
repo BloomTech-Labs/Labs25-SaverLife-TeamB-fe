@@ -28,7 +28,7 @@ function MoneyFlow(props) {
   return (
     <MoneyFlowContainer>
       <MoneyFlowInfo>
-        <h1>Your Money Flow this Past Month</h1>
+        <h1>Your Money Flow this Past Week</h1>
       </MoneyFlowInfo>
 
       <MoneyFlowInfo>
