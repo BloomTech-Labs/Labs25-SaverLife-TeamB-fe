@@ -4,6 +4,21 @@ export const HeaderContainer = styled.div`
   align-content: center;
   margin: 0 auto;
   width: 80%;
+  @media (max-width: 765px) {
+    width: 100%;
+    h1 {
+      font-size: 2.5rem;
+    }
+    padding-bottom: 5%;
+    :after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 80%;
+      padding-top: 20px;
+      border-bottom: 1px solid #e266b5;
+    }
+  }
 `;
 export const HomeWrapper = styled.div`
   @media (max-width: 765px) {
