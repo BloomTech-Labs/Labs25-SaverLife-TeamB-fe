@@ -20,14 +20,12 @@ const ReferEmail = props => {
     axios
       .post(`${process.env.REACT_APP_API_URI}refer`, addedEmail)
       .then(res => {
-        console.log(res, 'added email data working');
         setAddedEmail(res.body.to);
       })
       .catch(err => console.log(err, 'Email data failed to return'));
     props.history.push('/refer');
-    console.log(addedEmail);
   };
-  const { userInfo, authService } = props;
+  const { authService } = props;
   return (
     <HomeWrapper>
       <Nav authService={authService} />
