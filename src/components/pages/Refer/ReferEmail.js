@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../Nav/Nav';
 import { HomeWrapper, HeaderContainer } from '../Home/styles/HomeStyles';
 import { FormInput, FormButton } from '../../common';
+
+const initialState = {
+  to: '',
+};
 
 const ReferEmail = props => {
   const { userInfo, authService } = props;
