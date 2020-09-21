@@ -5,15 +5,16 @@ export const BudgetsContainer = styled.div`
   margin: 0 auto;
   width: 80%;
   border-bottom: 1px solid #e266b5;
-  padding-top: 5% @media (max-width: 765px) {
-    display: flex;
+  padding-top: 5%;
+  @media (max-width: 765px) {
+    border-bottom: 0;
     width: 100%;
     padding: 0;
     margin: 0;
-    flex-direction: column-reverse;
-    border-bottom: 0;
+    flex-direction: column;
   }
 `;
+
 export const BudgetsInfo = styled.div`
   margin: 0 auto;
   width: 50%;
@@ -34,7 +35,8 @@ export const SavingsGraphContainer = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    border-bottom: 0;
   }
 `;
 export const SavingsGraphInfo = styled.div`
@@ -55,7 +57,7 @@ export const MoneyFlowContainer = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
-    flex-direction: column-reverse;
+    flex-direction: column;
     border-bottom: 0;
   }
 `;
@@ -67,6 +69,9 @@ export const MoneyFlowInfo = styled.div`
 `;
 
 export const RenderGraphWrapper = styled.div`
+h1{
+  font-size: 2rem;
+};
 @media (max-width: 765px) {
     width: 600px;
     margin: 0 auto;
@@ -94,7 +99,7 @@ export const SpendingContainer = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
-    flex-direction: column;
+    flex-direction: column-reverse;
     border-bottom: 0;
   }
 `;
