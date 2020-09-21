@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Nav from '../Nav/Nav';
 import { HomeWrapper, HeaderContainer } from '../Home/styles/HomeStyles';
-import { FormInput, FormButton } from '../../common';
 import axios from 'axios';
 
 const initialState = {
-  to: '',
+  to: '', //person receiving email
 };
 
 const ReferEmail = props => {
@@ -46,7 +45,7 @@ const ReferEmail = props => {
           onSubmit={handleSubmit}
           style={{ color: '#c01089', textAlign: 'center' }}
         >
-          <label htmlFor="to">email:</label>
+          <label htmlFor="to">Email:</label>
           <input
             type="text"
             id="to"
