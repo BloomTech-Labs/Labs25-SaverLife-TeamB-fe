@@ -3,8 +3,6 @@ import {
   MoneyFlow,
   SpendingPost,
   SpendingPostBar,
-  Budgets,
-  ComparedSpendings,
   GraphCarousel,
 } from '../graphs';
 import Media from 'react-media';
@@ -35,14 +33,6 @@ const RenderGraphs = props => {
               userInfo={userInfo}
               url={process.env.REACT_APP_API_URI + 'data/spending'}
             />
-
-            <Budgets
-              authState={authState}
-              userInfo={userInfo}
-              url={process.env.REACT_APP_API_URI + 'data/futureBudget'}
-            />
-
-            <ComparedSpendings />
           </>
         )}
       />
@@ -63,16 +53,6 @@ const RenderGraphs = props => {
                 userInfo={userInfo}
                 url={process.env.REACT_APP_API_URI + 'data/spending'}
               />
-            </RenderGraphWrapper>
-            <RenderGraphWrapper>
-              <Budgets
-                authState={authState}
-                userInfo={userInfo}
-                url={process.env.REACT_APP_API_URI + 'data/futureBudget'}
-              />
-            </RenderGraphWrapper>
-            <RenderGraphWrapper>
-              <ComparedSpendings />
             </RenderGraphWrapper>
 
             <RenderGraphWrapper>
