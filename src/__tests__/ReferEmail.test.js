@@ -19,20 +19,7 @@ describe('Loading Common Component', () => {
         <ReferEmail />
       </Router>
     );
-    const labelId = getByText(/Friend's Email/i);
-    expect(labelId.textContent).toBe("Friend's Email");
-  });
-});
-
-describe('click buttons', () => {
-  test('click submit button', () => {
-    const { getByText } = render(
-      <Router>
-        <ReferEmail />
-      </Router>
-    );
-    const clickButton = getByText(/Submit/i);
-    fireEvent.click(clickButton);
-    expect(clickButton.innerHTML).toBe('Submit');
+    const labelId = getByText(/Email:/i);
+    expect(labelId.textContent).toBe('Email:');
   });
 });
