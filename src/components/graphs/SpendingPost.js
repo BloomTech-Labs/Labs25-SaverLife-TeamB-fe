@@ -26,10 +26,6 @@ function SpendingPost(props) {
 
   return (
     <SpendingContainer>
-      <SpendingInfo />
-      <h1>Monthly Spendings by Category</h1>
-      <SpendingInfo />
-
       <SpendingInfo>
         <Plot
           data={data.data}
@@ -40,6 +36,13 @@ function SpendingPost(props) {
             { yaxis: { fixedrange: true }, xaxis: { fixedrange: true } })
           }
         />
+      </SpendingInfo>
+      <SpendingInfo>
+        <h1>Monthly Spending</h1>
+        <p>
+          Here are your spendings this month. You spent this much in this
+          category this month.
+        </p>
       </SpendingInfo>
     </SpendingContainer>
   );

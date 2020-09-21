@@ -22,6 +22,9 @@ export const MoneyFlowInfo = styled.div`
 `;
 
 export const RenderGraphWrapper = styled.div`
+h1{
+  font-size: 2rem;
+};
 @media (max-width: 765px) {
     width: 600px;
     margin: 0 auto;
@@ -51,7 +54,7 @@ export const SpendingContainer = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
-    flex-direction: column;
+    flex-direction: column-reverse;
     border-bottom: 0;
   }
 `;
