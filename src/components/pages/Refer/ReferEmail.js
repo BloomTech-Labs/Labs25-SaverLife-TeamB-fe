@@ -8,6 +8,13 @@ const initialState = {
 };
 
 const ReferEmail = props => {
+  const [addedEmail, setAddedEmail] = useState(initialState);
+  const handleChange = e => {
+    setAddedEmail({
+      ...addedEmail,
+      [e.target.name]: e.target.value,
+    });
+  };
   const { userInfo, authService } = props;
   return (
     <HomeWrapper>
