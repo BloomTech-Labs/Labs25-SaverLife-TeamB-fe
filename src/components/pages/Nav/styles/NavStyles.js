@@ -26,6 +26,24 @@ export const SLLogo = styled.img`
   }
 `;
 
+export const NavButtons = styled.div`
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @media (max-width: 765px) {
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    padding: 2%;
+    border-top: 2px solid rgb(189, 35, 125);
+    background: #e266b5;
+  }
+`;
+
 export const Button = styled.button`
   border: 1px solid rgb(189, 35, 125);
   color: rgb(189, 35, 125);

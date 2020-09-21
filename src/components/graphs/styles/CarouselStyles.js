@@ -25,6 +25,7 @@ export const CarouselContainer = styled.div`
 export const CarouselDots = styled.p`
   font-size: 2.5rem;
   letter-spacing: 0.8rem;
+  margin-bottom: 60px;
 `;
 
 export const SelectedDot = styled.span`
