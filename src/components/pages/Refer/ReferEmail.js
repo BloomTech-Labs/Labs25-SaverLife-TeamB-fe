@@ -33,23 +33,29 @@ const ReferEmail = props => {
     <HomeWrapper>
       <Nav authService={authService} />
       <HeaderContainer>
-        <h1 style={{ textAlignVertical: 'center', textAlign: 'center' }}>
+        <h1
+          style={{
+            textAlignVertical: 'center',
+            textAlign: 'center',
+            color: '#c01089',
+          }}
+        >
           Refer a Friend!
         </h1>
         <form
-          onSubmit={e => e.preventDefault()}
-          style={{ textAlignVertical: 'center', textAlign: 'center' }}
+          onSubmit={handleSubmit}
+          style={{ color: '#c01089', textAlign: 'center' }}
         >
-          <FormInput
-            placeholder="Email"
-            name="email"
-            labelId="Friend's Email"
+          <label htmlFor="to">email:</label>
+          <input
+            type="text"
+            id="to"
+            name="to"
+            value={addedEmail.to}
+            onChange={handleChange}
+            required
           />
-          <FormButton
-            buttonText="Submit"
-            classType="default"
-            disabled="false"
-          />
+          <button type="submit">Submit</button>
         </form>
         <img
           src="https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
