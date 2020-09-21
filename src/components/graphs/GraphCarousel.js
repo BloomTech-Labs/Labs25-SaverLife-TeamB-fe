@@ -45,7 +45,7 @@ const GraphCarousel = props => {
   const [dots, setDots] = useState(
     <CarouselDots>
       {' '}
-      • <SelectedDot>•</SelectedDot> • •{' '}
+      • <SelectedDot>•</SelectedDot> •{' '}
     </CarouselDots>
   );
   const slide = dir => {
@@ -63,28 +63,21 @@ const GraphCarousel = props => {
       setDots(
         <CarouselDots>
           {' '}
-          <SelectedDot>•</SelectedDot> • • •{' '}
+          <SelectedDot>•</SelectedDot> • •{' '}
         </CarouselDots>
       );
     } else if (state.dotIndex === 1) {
       setDots(
         <CarouselDots>
           {' '}
-          • <SelectedDot>•</SelectedDot> • •{' '}
+          • <SelectedDot>•</SelectedDot> •{' '}
         </CarouselDots>
       );
     } else if (state.dotIndex === 2) {
       setDots(
         <CarouselDots>
           {' '}
-          • • <SelectedDot>•</SelectedDot> •{' '}
-        </CarouselDots>
-      );
-    } else if (state.dotIndex === 3) {
-      setDots(
-        <CarouselDots>
-          {' '}
-          • • • <SelectedDot>•</SelectedDot>{' '}
+          • • <SelectedDot>•</SelectedDot>{' '}
         </CarouselDots>
       );
     }
@@ -92,7 +85,7 @@ const GraphCarousel = props => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      state.dotIndex + 1 > 3
+      state.dotIndex + 1 > 2
         ? (state.dotIndex = 0)
         : (state.dotIndex = state.dotIndex + 1);
       console.log(state.dotIndex);
@@ -101,7 +94,7 @@ const GraphCarousel = props => {
     },
     onSwipedRight: () => {
       state.dotIndex - 1 < 0
-        ? (state.dotIndex = 3)
+        ? (state.dotIndex = 2)
         : (state.dotIndex = state.dotIndex - 1);
       console.log(state.dotIndex);
       colorDot();
