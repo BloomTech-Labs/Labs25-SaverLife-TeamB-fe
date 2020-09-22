@@ -84,8 +84,8 @@ const ReferEmail = props => {
         <img
           src="https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
           className="piggy"
-          width="700"
-          height="500"
+          width="80%"
+          height="80%"
         />
       </HeaderContainer>
     </HomeWrapper>
