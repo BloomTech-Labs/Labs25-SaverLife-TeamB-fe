@@ -54,7 +54,6 @@ export const SpendingContainer = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
-    flex-direction: column-reverse;
     border-bottom: 0;
   }
 `;
