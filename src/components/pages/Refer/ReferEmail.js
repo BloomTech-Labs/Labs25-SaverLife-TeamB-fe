@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from '../Nav/Nav';
 import { HomeWrapper, HeaderContainer } from '../Home/styles/HomeStyles';
 import axios from 'axios';
+import { Button } from '../Nav/styles/NavStyles';
 
 const initialState = {
   to: '', //person receiving email
@@ -41,9 +42,25 @@ const ReferEmail = props => {
         </h1>
         <form
           onSubmit={handleSubmit}
-          style={{ color: '#c01089', textAlign: 'center' }}
+          style={{
+            color: '#c01089',
+            textAlign: 'center',
+            marginRight: '10%',
+            fontSize: '1.3rem',
+            fontWeight: '500',
+          }}
         >
-          <label htmlFor="to">Email:</label>
+          <label
+            htmlFor="to"
+            style={{
+              color: '#c01089',
+              textAlign: 'center',
+              marginRight: '2%',
+              fontSize: '1.8rem',
+            }}
+          >
+            Email:
+          </label>
           <input
             type="text"
             id="to"
@@ -52,7 +69,9 @@ const ReferEmail = props => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Submit</button>
+          <Button type="submit" style={{ marginLeft: '3%' }}>
+            Submit
+          </Button>
         </form>
         <img
           src="https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
