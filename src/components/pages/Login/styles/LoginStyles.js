@@ -22,4 +22,12 @@ export const LoginHolder = styled.div`
     background-position: 72% 0%;
     background-size: cover;
   }
+
+  @media (max-width: 359px) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-position: 70% 0%;
+    background-size: cover;
+  }
 `;
