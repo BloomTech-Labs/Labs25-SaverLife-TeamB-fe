@@ -40,6 +40,12 @@ function Nav({ authService }) {
           >
             Logout
           </Button>
+
+          <Link to={'/refer'}>
+            <Button className="refer" type="primary">
+              Refer
+            </Button>
+          </Link>
         </NavButtons>
       </NavContents>
     </NavWrapper>
