@@ -76,4 +76,10 @@ export const Button = styled.button`
     text-align: center;
     padding: 0.5rem 2rem;
   }
+
+  @media (max-width: 460px) {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+  }
 `;
