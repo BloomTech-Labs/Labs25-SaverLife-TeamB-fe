@@ -43,9 +43,8 @@ const ReferEmail = props => {
         <form
           onSubmit={handleSubmit}
           style={{
-            color: '#c01089',
             textAlign: 'center',
-            marginRight: '10%',
+            marginRight: '8%',
             fontSize: '1.3rem',
             fontWeight: '500',
           }}
@@ -68,8 +67,17 @@ const ReferEmail = props => {
             value={addedEmail.to}
             onChange={handleChange}
             required
+            style={{
+              border: '2px solid #c01089',
+              borderRadius: '0.5rem',
+              color: '#c01089',
+              textAlign: 'center',
+              marginRight: '8%',
+              fontSize: '1.3rem',
+              fontWeight: '500',
+            }}
           />
-          <Button type="submit" style={{ marginLeft: '3%' }}>
+          <Button type="submit" style={{ marginLeft: '-5%' }}>
             Submit
           </Button>
         </form>
