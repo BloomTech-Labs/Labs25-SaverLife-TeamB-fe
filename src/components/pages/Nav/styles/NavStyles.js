@@ -8,7 +8,7 @@ export const NavWrapper = styled.div`
 
 export const NavContents = styled.div`
   margin: 0 auto;
-  padding: 30px;
+  padding: 2.5rem;
   display: flex;
   width: 65%;
   align-items: center;
@@ -29,10 +29,10 @@ export const SLLogo = styled.img`
 
 export const NavButtons = styled.div`
   margin: 0 auto;
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   @media (max-width: 765px) {
     display: flex;
     overflow: hidden;
@@ -60,11 +60,5 @@ export const Button = styled.button`
     color: white;
     background-color: rgb(189, 35, 125);
     border: 1px solid rgb(189, 35, 125);
-  }
-  @media (max-width: 450px) {
-    display: flex;
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 0.5rem 1rem;
   }
 `;
