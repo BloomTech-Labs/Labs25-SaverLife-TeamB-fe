@@ -26,19 +26,19 @@ h1{
   font-size: 2rem;
 };
 @media (max-width: 765px) {
-    width: 600px;
+    width: 100%;
     margin: 0 auto;
 @media (max-width: 600px) {
-    width: 500px;
+    width: 92%;
     margin: 0 auto;
 @media (max-width: 500px) {
-    width: 400px;
+    width: 90%;
     margin: 0 auto;
 @media (max-width: 400px) {
-    width: 300px;
+    width: 90%;
     margin: 0 auto;
 @media (max-width: 300px) {
-    width: 250px;
+    width: 88%;
     margin: 0 auto;
 `;
 
