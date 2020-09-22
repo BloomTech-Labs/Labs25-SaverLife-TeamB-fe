@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from '../Nav/Nav';
 import { HomeWrapper, HeaderContainer } from '../Home/styles/HomeStyles';
 import axios from 'axios';
+import { Button } from '../Nav/styles/NavStyles';
 
 const initialState = {
   to: '', //person receiving email
@@ -41,9 +42,24 @@ const ReferEmail = props => {
         </h1>
         <form
           onSubmit={handleSubmit}
-          style={{ color: '#c01089', textAlign: 'center' }}
+          style={{
+            textAlign: 'center',
+            marginRight: '8%',
+            fontSize: '1.3rem',
+            fontWeight: '500',
+          }}
         >
-          <label htmlFor="to">Email:</label>
+          <label
+            htmlFor="to"
+            style={{
+              color: '#c01089',
+              textAlign: 'center',
+              marginRight: '2%',
+              fontSize: '1.8rem',
+            }}
+          >
+            Email:
+          </label>
           <input
             type="text"
             id="to"
@@ -51,14 +67,25 @@ const ReferEmail = props => {
             value={addedEmail.to}
             onChange={handleChange}
             required
+            style={{
+              border: '2px solid #c01089',
+              borderRadius: '0.5rem',
+              color: '#c01089',
+              textAlign: 'center',
+              marginRight: '8%',
+              fontSize: '1.3rem',
+              fontWeight: '500',
+            }}
           />
-          <button type="submit">Submit</button>
+          <Button type="submit" style={{ marginLeft: '-5%' }}>
+            Submit
+          </Button>
         </form>
         <img
           src="https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
           className="piggy"
-          width="1000"
-          height="600"
+          width="80%"
+          height="80%"
         />
       </HeaderContainer>
     </HomeWrapper>
