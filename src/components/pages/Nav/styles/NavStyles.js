@@ -65,4 +65,9 @@ export const Button = styled.button`
   @media (max-width: 1100px) {
     margin-left: 15%;
   }
+
+  @media (max-width: 765px) {
+    padding: 0rem 2rem;
+    font-size: 1rem;
+  }
 `;
