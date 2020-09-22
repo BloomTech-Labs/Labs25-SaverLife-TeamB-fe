@@ -8,4 +8,10 @@ export const LoginHolder = styled.div`
   width: 100vw;
   overflow-y: hidden;
   overflow-x: hidden;
+
+  @media (min-width: 600px) and (max-width: 800px) {
+    height: 100vh;
+    background-position: 80% 5%;
+    background-size: cover;
+  }
 `;
