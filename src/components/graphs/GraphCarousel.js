@@ -32,7 +32,6 @@ function reducer(state, { type, numItems }) {
         dotIndex: state.dotIndex,
       };
     case 'STOP':
-      console.log('in stop', state.dotIndex);
       return { ...state, sliding: false };
     default:
       return state;
@@ -49,12 +48,9 @@ const GraphCarousel = props => {
     </CarouselDots>
   );
   const slide = dir => {
-    console.log('before dir dispatch', state.dotIndex);
     dispatch({ type: dir, numItems });
-    console.log('before timeout', state.dotIndex);
     setTimeout(() => {
       dispatch({ type: 'STOP' });
-      console.log('in timeout', state.dotIndex);
     }, 50);
   };
 
@@ -88,7 +84,6 @@ const GraphCarousel = props => {
       state.dotIndex + 1 > 2
         ? (state.dotIndex = 0)
         : (state.dotIndex = state.dotIndex + 1);
-      console.log(state.dotIndex);
       colorDot();
       slide('RIGHT');
     },
@@ -96,7 +91,6 @@ const GraphCarousel = props => {
       state.dotIndex - 1 < 0
         ? (state.dotIndex = 2)
         : (state.dotIndex = state.dotIndex - 1);
-      console.log(state.dotIndex);
       colorDot();
       slide('LEFT');
     },

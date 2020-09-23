@@ -1,25 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { ReferEmail } from '../components/pages/Refer';
+import { HeaderContainer } from '../components/pages/Home/styles/HomeStyles';
 
 describe('Loading Common Component', () => {
   test('it should mount a div based on props for h1', () => {
     const { getByText } = render(
-      <Router>
-        <ReferEmail />
-      </Router>
+      <HeaderContainer>
+        <h1>Refer a Friend!</h1>
+      </HeaderContainer>
     );
     const h1 = getByText(/Refer a Friend!/i);
     expect(h1.textContent).toBe('Refer a Friend!');
-  });
-  test('it should mount a div based on props for h1', () => {
-    const { getByText } = render(
-      <Router>
-        <ReferEmail />
-      </Router>
-    );
-    const labelId = getByText(/Email:/i);
-    expect(labelId.textContent).toBe('Email:');
   });
 });
