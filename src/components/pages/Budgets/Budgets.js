@@ -36,7 +36,6 @@ function Budgets({ url, authState, userInfo, authService }) {
   console.log('budget data', data);
   return (
     <>
-      <Nav authService={authService} />
       <BudgetsHolder>
         <BudgetsInfo>
           <h1>Here are your Budgets for this month</h1>
