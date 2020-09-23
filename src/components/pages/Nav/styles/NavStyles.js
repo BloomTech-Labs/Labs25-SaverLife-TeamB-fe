@@ -62,7 +62,7 @@ export const Button = styled.button`
     border: 1px solid rgb(189, 35, 125);
   }
 
-  @media (max-width: 1100px) {
+  @media (min-width: 1100px) {
     margin-left: 15%;
   }
 
