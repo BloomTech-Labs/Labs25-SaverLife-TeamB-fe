@@ -33,6 +33,12 @@ function Nav({ authService }) {
             </Button>
           </Link>
 
+          <Link to={'/refer'}>
+            <Button className="refer" type="primary">
+              Refer
+            </Button>
+          </Link>
+
           <Button
             className="logout"
             type="primary"
@@ -40,12 +46,6 @@ function Nav({ authService }) {
           >
             Logout
           </Button>
-
-          <Link to={'/refer'}>
-            <Button className="refer" type="primary">
-              Refer
-            </Button>
-          </Link>
         </NavButtons>
       </NavContents>
     </NavWrapper>
