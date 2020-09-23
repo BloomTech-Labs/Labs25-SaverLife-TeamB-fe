@@ -39,6 +39,12 @@
 
 ---
 
+## SaverLife Description
+
+A cross functional React Application built to help users save their first $400.
+
+---
+
 > **Disclaimer:** This application is currently in Alpha (as of June 08, 2020) and is not ready for production. Please use at your own risk as things will change almost daily.
 
 - Welcome to your `Basic Single Page Application Repository`. Use this to start your own Greenfield Project using ReactJS and common industry standards.
