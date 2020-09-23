@@ -1,24 +1,18 @@
-import RenderHomePage from '../components/pages/Home/RenderHomePage';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { HeaderContainer } from '../components/pages/Home/styles/HomeStyles';
 
 describe('<RenderHomePage /> test suite', () => {
   test('it handles a loading state', () => {
-    const authService = {
-      logout: jest.fn(),
-    };
     const { getByText } = render(
       <Router>
-        <RenderHomePage userInfo={{ name: 'Sara' }} authService={authService} />
+        <HeaderContainer>
+          <h1>Your Documented Spending and Saving History</h1>
+        </HeaderContainer>
       </Router>
     );
-    const button = getByText(/logout/i);
-    userEvent.click(button);
-    expect(authService.logout).toHaveBeenCalledTimes(1);
-    expect(
-      getByText(/Hi Sara Welcome to your SaverLife Dashboard!/i).innerHTML
-    ).toBe('Hi Sara Welcome to your SaverLife Dashboard!');
+    const h1 = getByText(/Your Documented Spending and Saving History/i);
+    expect(h1.textContent).toBe('Your Documented Spending and Saving History');
   });
 });
