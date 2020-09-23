@@ -13,7 +13,6 @@ import 'antd/dist/antd.less';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { NotFoundPage } from './components/pages/NotFound';
-import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { ReferEmail } from './components/pages/Refer';
@@ -61,7 +60,6 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
-        <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute
           path="/budget"
           exact
