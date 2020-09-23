@@ -45,6 +45,20 @@ A cross functional React Application built to help users save their first $400.
 
 ---
 
+## Features Overview
+
+---
+
+[Plotly](https://plotly.com/javascript/react/)
+
+[Redis](https://redis.io/)
+
+[SendGrid](https://sendgrid.com/)
+
+[React Swipeable](https://www.npmjs.com/package/react-swipeable)
+
+---
+
 > **Disclaimer:** This application is currently in Alpha (as of June 08, 2020) and is not ready for production. Please use at your own risk as things will change almost daily.
 
 - Welcome to your `Basic Single Page Application Repository`. Use this to start your own Greenfield Project using ReactJS and common industry standards.
