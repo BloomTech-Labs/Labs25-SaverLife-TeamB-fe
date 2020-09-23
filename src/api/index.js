@@ -81,7 +81,7 @@ const getFutureBudget = (url, authState, userInfo) => {
     .catch(err => err);
 };
 
-const postFutureBudget = (url, authState, userInfo) => {
+const postFutureBudget = (url, authState, userInfo, monthly_savings_goal) => {
   const headers = getAuthHeader(authState);
   if (!url) {
     throw new Error('No URL provided');
@@ -91,11 +91,23 @@ const postFutureBudget = (url, authState, userInfo) => {
       url,
       {
         user_id: `${userInfo.sub}`,
-        monthly_savings_goal: 400,
+        monthly_savings_goal: `${monthly_savings_goal}`,
         placeholder: 'Shopping, Auto, Utilities',
       },
       { headers }
     )
+    .then(res => res.data)
+    .catch(err => err);
+};
+
+const getBudgetGoal = (url, authState, userInfo) => {
+  var headers = getAuthHeader(authState);
+  var headers = { ...headers, user_id: `${userInfo.sub}` };
+  if (!url) {
+    throw new Error('No URL provided');
+  }
+  return axios
+    .get(url, { headers })
     .then(res => res.data)
     .catch(err => err);
 };
@@ -122,4 +134,5 @@ export {
   getFutureBudget,
   postFutureBudget,
   getSpendingBar,
+  getBudgetGoal,
 };
