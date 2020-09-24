@@ -27,6 +27,18 @@
 
 ---
 
+## Repos
+
+---
+
+[Front End](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamB-fe)
+
+[Back End](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamB-be)
+
+[Data Science](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-ds)
+
+---
+
 ## SaverLife Product Demo
 
 ---
