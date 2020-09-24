@@ -27,6 +27,40 @@
 
 ---
 
+## Repos
+
+---
+
+[Front End](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamB-fe)
+
+[Back End](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamB-be)
+
+[Data Science](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-ds)
+
+---
+
+## Deployed
+
+---
+
+[Front End](https://b.saverlife.dev/)
+
+[Back End](https://saverlife-b-api.herokuapp.com/)
+
+[Data Science](http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/)
+
+---
+
+## SaverLife Product Demo
+
+---
+
+This presentation of our application covers core features (Plotly, Redis, SendGrid, and React-Swipeable), design, use, and special thanks!
+
+[Presentation](https://www.youtube.com/watch?v=M6PMJDJtIzw&feature=youtu.be)
+
+---
+
 ## Project Overview
 
 ---
