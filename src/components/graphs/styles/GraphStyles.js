@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const MoneyFlowContainer = styled.div`
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 80%;
+  // border-top: 1px solid #e266b5;
   border-bottom: 1px solid #e266b5;
   padding-top: 5%;
   @media (max-width: 765px) {
@@ -67,6 +69,7 @@ export const SpendingInfo = styled.div`
 export const SpendingBarContainer = styled.div`
   margin: 0 auto;
   width: 80%;
+  text-align: center;
   border-bottom: 1px solid #e266b5;
   padding-top: 5%;
   @media (max-width: 765px) {
