@@ -29,10 +29,13 @@ export const SLLogo = styled.img`
 
 export const NavButtons = styled.div`
   margin: 0 auto;
-  width: 30%;
+  // width: 30%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  @media (min-width: 766px) {
+    margin-left: 9vw;
+  }
   @media (max-width: 765px) {
     display: flex;
     overflow: hidden;
@@ -49,7 +52,6 @@ export const NavButtons = styled.div`
 export const Button = styled.button`
   border: 1px solid rgb(189, 35, 125);
   color: rgb(189, 35, 125);
-  margin-left: 5%;
   border-radius: 12px;
   font-size: 1.3rem;
   font-weight: 500;
@@ -62,8 +64,8 @@ export const Button = styled.button`
     border: 1px solid rgb(189, 35, 125);
   }
 
-  @media (min-width: 1100px) {
-    margin-left: 15%;
+  @media (min-width: 766px) {
+    margin-left: 2vw;
   }
 
   @media (max-width: 765px) {

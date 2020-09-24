@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const MoneyFlowContainer = styled.div`
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 80%;
   border-bottom: 1px solid #e266b5;
@@ -25,6 +26,7 @@ h1{
   font-size: 2rem;
 };
 @media (max-width: 765px) {
+    padding-top: 5%;
     width: 100%;
     margin: 0 auto;
 @media (max-width: 600px) {
@@ -67,6 +69,7 @@ export const SpendingInfo = styled.div`
 export const SpendingBarContainer = styled.div`
   margin: 0 auto;
   width: 80%;
+  text-align: center;
   border-bottom: 1px solid #e266b5;
   padding-top: 5%;
   @media (max-width: 765px) {
