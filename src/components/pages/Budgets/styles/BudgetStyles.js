@@ -9,8 +9,8 @@ export const BudgetsHolder = styled.div`
   @media (max-width: 765px) {
     border-bottom: 0;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    padding: 4% 8%;
+    margin-bottom: 17vh;
     flex-direction: column;
   }
 `;
