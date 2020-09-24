@@ -30,14 +30,42 @@ function BudgetsForm(props) {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>Monthly Savings Goal</label>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          textAlign: 'center',
+          marginRight: '8%',
+          fontSize: '1.3rem',
+          fontWeight: '500',
+          marginBottom: '5%',
+        }}
+      >
+        <label
+          style={{
+            color: '#c01089',
+            textAlign: 'center',
+            marginTop: '20%',
+            marginRight: '2%',
+            fontSize: '1.8rem',
+          }}
+        >
+          Monthly Savings Goal
+        </label>
         <input
           type="text"
           id="savings goal"
           name="monthly_savings_goal"
           value={addedBudget.monthly_savings_goal}
           onChange={handleChange}
+          style={{
+            border: '2px solid #c01089',
+            borderRadius: '0.5rem',
+            color: '#c01089',
+            textAlign: 'center',
+            marginRight: '8%',
+            fontSize: '1.3rem',
+            fontWeight: '500',
+          }}
         />
         <Button type="submit">Submit</Button>
       </form>
