@@ -5,6 +5,7 @@ export const HeaderContainer = styled.div`
   text-align: center;
   margin: 0 auto;
   width: 80%;
+  border-bottom: 1px solid #e266b5;
   @media (max-width: 765px) {
     width: 100%;
     h1 {
@@ -17,7 +18,6 @@ export const HeaderContainer = styled.div`
       margin: 0 auto;
       width: 80%;
       padding-top: 20px;
-      border-bottom: 1px solid #e266b5;
     }
   }
 `;
